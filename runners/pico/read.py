@@ -79,7 +79,8 @@ def check(lines, log_path):
     if diffs:
         report += ["", "lines that differ (reference | board):"] + [f"  {a}  |  {b}" for a, b in diffs[:20]]
     text = "\n".join(report)
-    open(log_path.replace(".log", "-check.txt"), "w").write(text + "\n")
+    report = log_path[:-4] + "-check.txt" if log_path.endswith(".log") else log_path + "-check.txt"   # never over the log itself
+    open(report, "w").write(text + "\n")
     print("\n" + text)
     return same == len(want) == len(got)
 
