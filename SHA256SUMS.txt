@@ -12,3 +12,5 @@ c865312b4399d17b42711a6acef33a1acd15e1c89c06d4c0bed8748c7018cf2b  brain/lib/linu
 c37e447c1850a4938cd3bf86195f37503716bd947bfdcc3cfae5ca0c57a741ec  runners/pico/edai-pico2.uf2
 a408bbc0759d8c403c6b5b68ffadfdffc70648be6bc0d9f14a7992303ccf7c33  runners/wokwi/edai-wokwi-pico2-full.uf2
 954f6731de617f2ac2d871f3e5ec0d0b7e1e59839befde7602a0de6de523c263  runners/wokwi/edai-wokwi-pico2-quick.uf2
+8778fa7753189f4c1ae865e8cc5409137981fedba091b88c4ba42e536a0f5f8c  runners/uno/EdaiUno.ino.hex
+796a885b7917fe3e03c9db6113b90fa3953248ead618179da1453a66151a2ab7  runners/uno/libraries/EdaiUnoBrain/src/atmega328p/libedaiuno.a

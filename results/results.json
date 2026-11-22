@@ -125,5 +125,20 @@
   "brain_bytes": 5216,
   "stack_bound_bytes": 2984,
   "log": "results/qemu/logs/m0.log"
+ },
+ {
+  "device": "Arduino Uno (ATmega328P, 8-bit, 16 MHz, 2 KB RAM), a real board",
+  "how": "runners/uno, the Uno edition, quick set of 9",
+  "score": "9/9",
+  "rules": "3/3",
+  "trends": "3/3",
+  "noise": "3/3",
+  "same_lines_as_reference": "9 of 9",
+  "seconds": 5526,
+  "ram_peak_bytes": 1901,
+  "ram_never_touched_bytes": 147,
+  "brain_bytes": 782,
+  "board_power_watts": "0.25 to 0.5 (partner's USB meter, whole board)",
+  "log": "results/uno/real-uno-run.txt"
  }
 ]
