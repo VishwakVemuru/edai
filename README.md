@@ -23,12 +23,14 @@ own device, and anyone can try to beat it.
 |---|---|---|---|---|
 | Mac, Apple silicon | `runners/computer` (native library) | **275** | 97 · 119 · 59 | 10.3 s |
 | Mac, Apple silicon | `runners/browser` (in the browser) | **275** | 97 · 119 · 59 | 13.2 s |
-| Phones | `runners/browser` | not run yet | | |
+| iPhone | `runners/browser` (in the browser) | **275** | not recorded | not recorded |
+| Other phones | `runners/browser` | not run yet | | |
 | Raspberry Pi Pico 2, simulated in Wokwi | `runners/wokwi` | not run yet | | |
 | Raspberry Pi Pico 2 or Pico, a real board | `runners/pico` | waiting for a board | | |
 
 On the Mac the native run gives, problem by problem, the very same line as the reference in
-`runners/computer/expected.txt`: who answered, both answers, the self-check, right or wrong.
+`runners/computer/expected.txt`: who answered, both answers, the self-check, right or wrong. An iPhone, running the
+browser page, gave the same score: 275.
 
 Who answered the 300: AM 80 (exact rules), AM's splitter 29 (exact rules in pieces), the net 127 (estimates that
 passed its self-check), and CANNOT 64.

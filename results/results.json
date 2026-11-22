@@ -30,7 +30,13 @@
   }
  },
  {
-  "device": "phones",
+  "device": "iPhone",
+  "how": "runners/browser",
+  "score": 275,
+  "date": "2026-11-22"
+ },
+ {
+  "device": "other phones",
   "how": "runners/browser",
   "score": "not run yet"
  },
