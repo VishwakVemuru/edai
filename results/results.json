@@ -73,5 +73,57 @@
   "trends": "581/600",
   "noise": "299/300",
   "same_lines_as_reference": "1500 of 1500"
+ },
+ {
+  "device": "Arm cortex-m4f library on QEMU mps2-an386 (Cortex-M4 with FPU), emulated",
+  "how": "results/qemu (QEMU 9.2.1, arm-none-eabi-gcc 13.3.0)",
+  "score": 275,
+  "rules": 97,
+  "trends": 119,
+  "noise": 59,
+  "same_lines_as_reference": 300,
+  "emulator_seconds": 437,
+  "brain_bytes": 5216,
+  "stack_bound_bytes": 2960,
+  "log": "results/qemu/logs/m4f.log"
+ },
+ {
+  "device": "Arm cortex-m7 library on QEMU mps2-an500 (Cortex-M7), emulated",
+  "how": "results/qemu (QEMU 9.2.1, arm-none-eabi-gcc 13.3.0)",
+  "score": 275,
+  "rules": 97,
+  "trends": 119,
+  "noise": 59,
+  "same_lines_as_reference": 300,
+  "emulator_seconds": 377,
+  "brain_bytes": 5216,
+  "stack_bound_bytes": 2944,
+  "log": "results/qemu/logs/m7.log"
+ },
+ {
+  "device": "Arm cortex-m33 library on QEMU mps2-an505 (Cortex-M33), emulated",
+  "how": "results/qemu (QEMU 9.2.1, arm-none-eabi-gcc 13.3.0)",
+  "score": 275,
+  "rules": 97,
+  "trends": 119,
+  "noise": 59,
+  "same_lines_as_reference": 300,
+  "emulator_seconds": 462,
+  "brain_bytes": 5216,
+  "stack_bound_bytes": 2960,
+  "log": "results/qemu/logs/m33.log"
+ },
+ {
+  "device": "Arm cortex-m0plus library on QEMU microbit (Cortex-M0, no FPU), emulated",
+  "how": "results/qemu (QEMU 9.2.1, arm-none-eabi-gcc 13.3.0)",
+  "score": 275,
+  "rules": 97,
+  "trends": 119,
+  "noise": 59,
+  "same_lines_as_reference": 300,
+  "emulator_seconds": 1800,
+  "brain_bytes": 5216,
+  "stack_bound_bytes": 2984,
+  "log": "results/qemu/logs/m0.log"
  }
 ]

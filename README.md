@@ -27,12 +27,16 @@ can try to beat it.
 | iPhone | `runners/browser` (in the browser) | **275** | not recorded | not recorded |
 | Other phones | `runners/browser` | not run yet | | |
 | Raspberry Pi Pico 2, simulated in Wokwi | `runners/wokwi`, quick set of 9 | **9 of 9** | 3 · 3 · 3 | 96 s (simulated) |
+| Arm Cortex-M4F, M7, M33 and M0, emulated in QEMU | `results/qemu`, all 300 on each | **275** on all four | 97 · 119 · 59 | 6 to 30 min (emulator) |
 | Raspberry Pi Pico 2 or Pico, a real board | `runners/pico` | waiting for a board | | |
 
 On the Mac the native run gives, problem by problem, the very same line as the reference in
 `runners/computer/expected.txt`: who answered, both answers, the self-check, right or wrong. An iPhone, running the
 browser page, gave the same score: 275. On the simulated Pico 2, the 9 problems of the quick set gave the same answers
-as the reference (`results/wokwi-pico2-quick.txt`, recorded while the challenger below was being built).
+as the reference (`results/wokwi-pico2-quick.txt`, recorded while the challenger below was being built). On four Arm cores emulated
+by QEMU (Cortex-M4F, M7, M33, and an M0 with no floating-point unit), all 300 problems gave 275, and all 1,200 lines
+are byte-for-byte the same as the reference (`results/qemu`). An emulator runs a chip's instructions but not its
+real timing or power, so a real board is the next test.
 
 Who answered the 300: AM 80 (exact rules), AM's splitter 29 (exact rules in pieces), the net 127 (estimates that
 passed its self-check), and CANNOT 64.
@@ -188,7 +192,7 @@ python3 score.py your-answers-23.txt --key problems/fresh/seed-23/answers.json
 | `runners/wokwi/` | the programs for a simulated Pico 2 in the Wokwi browser simulator, and a checker |
 | `sensors/` | the brain on real sensor data: the tools, the phone page and the results |
 | `challengers/beat/` | an open-source challenger, with its source, answers and results |
-| `results/results.json` | the results above |
+| `results/` | the results above: `results.json`, the simulated Pico 2's log, and the emulated cores' logs and test program (`results/qemu`) |
 
 ## About the brain
 
