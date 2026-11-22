@@ -3,3 +3,9 @@ runners/computer/my-run.txt
 runners/pico/out/
 .DS_Store
 runners/computer/build-fresh/
+sensors/data/
+sensors/out/
+sensors/sensor_run
+sensors/hidtemp
+sensors/phone/.cert/
+sensors/my-lab.json

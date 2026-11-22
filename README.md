@@ -60,6 +60,19 @@ That is 274.8 per set on average, the same as its 275 on the main set.
 To replicate it, run `cd runners/computer && make fresh`. It runs the brain on each fresh set, scores it, and compares
 every line with that set's reference.
 
+## Real sensor data
+
+The same brain, unchanged, was also run on real sensors:
+- temperature sensors that drift and fail (Intel Berkeley Lab);
+- a motor that develops a bearing fault (Case Western Reserve University);
+- a MacBook's chip temperature, read live;
+- an iPhone's tilt sensor, with the brain running on the phone.
+
+It followed drift and smooth movement closely, and answered exactly when the motor's behaviour changed. It refused
+readings that follow no pattern: 97% of scrambled readings and 91% of random shaking. Given a neighbouring sensor, it
+caught a drifting one up to 14 hours before the reading passed 35 °C. The numbers, and how to replicate them, are in
+[`sensors/README.md`](sensors/README.md).
+
 ## Replicate it
 
 **In a browser, on any phone or computer.** Open `runners/browser/index.html` and press **Run**. Once it's open, it
@@ -125,6 +138,7 @@ python3 score.py your-answers-23.txt --key problems/fresh/seed-23/answers.json
 | `runners/computer/` | a small C program that runs the 300 problems through the library, and the fresh sets (`make fresh`) |
 | `runners/pico/` | the programs for a Pico 2 and the original Pico, the reader and checker, and the program's source for reference |
 | `runners/wokwi/` | the programs for a simulated Pico 2 in the Wokwi browser simulator, and a checker |
+| `sensors/` | the brain on real sensor data: the tools, the phone page and the results |
 | `results/results.json` | the results above |
 
 ## About the brain
