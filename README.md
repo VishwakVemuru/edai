@@ -21,7 +21,7 @@ own device, and anyone can try to beat it.
 
 | Device | How it ran | Score | Rules · trends · noise | Time for all 300 |
 |---|---|---|---|---|
-| Mac, Apple silicon | `runners/computer` (native library) | **275** | 97 · 119 · 59 | 10.3 s |
+| Mac, Apple silicon | `runners/computer` (native library) | **275** | 97 · 119 · 59 | 6.3 s |
 | Mac, Apple silicon | `runners/browser` (in the browser) | **275** | 97 · 119 · 59 | 13.2 s |
 | iPhone | `runners/browser` (in the browser) | **275** | not recorded | not recorded |
 | Other phones | `runners/browser` | not run yet | | |
@@ -37,6 +37,28 @@ passed its self-check), and CANNOT 64.
 
 The brain does each step of its maths the same way on every target, so every device should give the same 300 lines.
 Running it on yours is the test.
+
+## Fresh problems
+
+The 300 problems are public with their key, so a solver can end up tuned to them without meaning to. To check that a
+score holds on problems nobody has seen, five more sets of 300 were drawn from the same generator. The brain's
+settings had been chosen beforehand on a separate design set of 150 problems, and none of these sets was used to
+choose anything. The brain, unchanged, scored:
+
+| Set | Score | Rules · trends · noise |
+|---|---|---|
+| the main set (`problems/`) | 275 | 97 · 119 · 59 |
+| fresh, seed 23 | 270 | 94 · 117 · 59 |
+| fresh, seed 24 | 278 | 100 · 118 · 60 |
+| fresh, seed 25 | 269 | 98 · 111 · 60 |
+| fresh, seed 26 | 285 | 106 · 119 · 60 |
+| fresh, seed 27 | 272 | 96 · 116 · 60 |
+| **all five fresh sets** | **1,374 of 1,500** | 494 · 581 · 299 |
+
+That is 274.8 per set on average, the same as its 275 on the main set.
+
+To replicate it, run `cd runners/computer && make fresh`. It runs the brain on each fresh set, scores it, and compares
+every line with that set's reference.
 
 ## Replicate it
 
@@ -84,17 +106,23 @@ Write your own solver. It gives one line per problem, either `p000 210,205` or `
 python3 score.py your-answers.txt
 ```
 
-Use only each problem's own examples; the key is for scoring.
+Use only each problem's own examples; the key is for scoring. A solver tuned to the main set usually scores lower on
+fresh problems, so score the five fresh sets too, each with its own key:
+
+```bash
+python3 score.py your-answers-23.txt --key problems/fresh/seed-23/answers.json
+```
 
 ## What is here
 
 | Path | What it holds |
 |---|---|
 | `problems/` | the 300 problems and the answer key |
+| `problems/fresh/` | five fresh sets of 300 problems, each with its own key |
 | `score.py` | the scorer |
 | `brain/include/aa.h`, `brain/lib/<target>/libaa.a` | the compiled brain for 9 targets: Cortex-M0+, M4F, M33 and M7; RISC-V (imc, imafc); macOS on Apple silicon; Linux on x86-64 and AArch64 |
 | `runners/browser/` | one page with the brain compiled to WebAssembly inside it |
-| `runners/computer/` | a small C program that runs the 300 problems through the library |
+| `runners/computer/` | a small C program that runs the 300 problems through the library, and the fresh sets (`make fresh`) |
 | `runners/pico/` | the programs for a Pico 2 and the original Pico, the reader and checker, and the program's source for reference |
 | `runners/wokwi/` | the programs for a simulated Pico 2 in the Wokwi browser simulator, and a checker |
 | `results/results.json` | the results above |

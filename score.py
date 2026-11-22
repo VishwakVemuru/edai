@@ -1,4 +1,6 @@
 """Scores answers to the 300 problems.   python3 score.py my-answers.txt
+A fresh set (problems/fresh/seed-NN) is scored with its own key:
+    python3 score.py my-answers.txt --key problems/fresh/seed-23/answers.json
 
 my-answers.txt has one line per problem: its id, then the two answers or CANNOT, for example
     p000 210,205
@@ -7,9 +9,11 @@ my-answers.txt has one line per problem: its id, then the two answers or CANNOT,
 a trend both answers within its tolerance, noise needs CANNOT.  A missing problem counts as wrong."""
 import json, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
-key = {a["id"]: a for a in json.load(open(os.path.join(HERE, "problems", "answers.json")))}
+args = sys.argv[1:]; keypath = os.path.join(HERE, "problems", "answers.json")
+if "--key" in args: i = args.index("--key"); keypath = args[i + 1]; del args[i:i + 2]
+key = {a["id"]: a for a in json.load(open(keypath))}
 given = {}
-for line in open(sys.argv[1]):
+for line in open(args[0]):
     m = re.match(r"\s*(p\d{3})\b(.*)", line)
     if not m: continue
     rest = m.group(2); a = re.search(r"ans=(\S+)", rest); tok = a.group(1) if a else (rest.split() or [""])[0]

@@ -7,7 +7,7 @@
   "trends": 119,
   "noise": 59,
   "same_lines_as_reference": 300,
-  "seconds_whole_program": 10.3,
+  "seconds_whole_program": 6.3,
   "who_answered": {
    "AM": 80,
    "SPLITTER": 29,
@@ -49,5 +49,21 @@
   "device": "Raspberry Pi Pico 2 or Pico, a real board",
   "how": "runners/pico",
   "score": "waiting for a board"
+ },
+ {
+  "device": "Mac, Apple silicon",
+  "how": "runners/computer, make fresh (five fresh sets of 300)",
+  "fresh_sets": {
+   "seed 23": 270,
+   "seed 24": 278,
+   "seed 25": 269,
+   "seed 26": 285,
+   "seed 27": 272
+  },
+  "fresh_total": "1374/1500",
+  "rules": "494/600",
+  "trends": "581/600",
+  "noise": "299/300",
+  "same_lines_as_reference": "1500 of 1500"
  }
 ]
