@@ -157,7 +157,7 @@ p155 trend by=NET ans=-376,-362 check=875 right=1
 p156 rule  by=SPLITTER ans=103,114 right=1
 p157 rule  by=AM ans=6563,19685 right=1
 p158 rule  by=SPLITTER ans=4,5625 right=0
-p159 rule  by=AM ans=0,3 right=0
+p159 rule  by=CANNOT ans=CANNOT check=250 right=0
 p160 rule  by=SPLITTER ans=-19,-13 right=1
 p161 rule  by=AM ans=78,106 right=1
 p162 rule  by=AM ans=3,0 right=1
@@ -175,7 +175,7 @@ p173 trend by=NET ans=-2,89 check=1000 right=1
 p174 rule  by=AM ans=0,0 right=0
 p175 trend by=NET ans=-334,-416 check=1000 right=1
 p176 trend by=NET ans=166,235 check=1000 right=1
-p177 rule  by=AM ans=5,4 right=1
+p177 rule  by=CANNOT ans=CANNOT check=250 right=0
 p178 trend by=NET ans=-270,-264 check=875 right=1
 p179 rule  by=SPLITTER ans=4,44 right=1
 p180 noise by=CANNOT ans=CANNOT check=167 right=1
@@ -234,7 +234,7 @@ p232 trend by=NET ans=287,-55 check=1000 right=1
 p233 noise by=CANNOT ans=CANNOT check=167 right=1
 p234 noise by=CANNOT ans=CANNOT check=167 right=1
 p235 noise by=CANNOT ans=CANNOT check=83 right=1
-p236 rule  by=AM ans=-3,10 right=0
+p236 rule  by=NET ans=4,10 check=833 right=0
 p237 trend by=NET ans=-94,-9 check=1000 right=1
 p238 rule  by=AM ans=-23,-25 right=1
 p239 rule  by=AM ans=94,124 right=1
@@ -298,4 +298,4 @@ p296 rule  by=SPLITTER ans=9,0 right=0
 p297 rule  by=SPLITTER ans=0,-24 right=1
 p298 noise by=CANNOT ans=CANNOT check=83 right=1
 p299 noise by=CANNOT ans=CANNOT check=125 right=1
-SUMMARY right 275/300 rules 97/120 trends 119/120 noise 59/60 (library macos-arm64)
+SUMMARY right 274/300 rules 96/120 trends 119/120 noise 59/60 (library macos-arm64)

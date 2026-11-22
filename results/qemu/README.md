@@ -1,7 +1,11 @@
 # The microcontroller libraries on four emulated Arm cores
 
-A partner ran the brain's microcontroller libraries in the QEMU emulator on 22 November 2026. No real board was
-connected: QEMU runs a chip's instructions on a PC, but not its real timing or power.
+A partner ran the brain's microcontroller libraries, **version 1.0**, in the QEMU emulator on 22 November 2026. No
+real board was connected: QEMU runs a chip's instructions on a PC, but not its real timing or power.
+
+These runs are of version 1.0, so they are checked against 1.0's reference, `../expected-1.0.txt`. Version 1.1 adds
+AM's proof and changes 3 of the 300 answers (p159, p177, p236); against 1.1's reference the logs match on the other
+297 lines, line for line.
 
 | Library | Emulated core (QEMU board) | Problems | Same as the reference | Score | Rules · trends · noise | Emulator time |
 |---|---|---:|---:|---:|---|---:|
@@ -10,7 +14,7 @@ connected: QEMU runs a chip's instructions on a PC, but not its real timing or p
 | `cortex-m33` | Cortex-M33 (`mps2-an505`) | 300 | **300 of 300** | **275** | 97 · 119 · 59 | 462 s |
 | `cortex-m0plus` | Cortex-M0, no FPU (`microbit`) | 300 | **300 of 300** | **275** | 97 · 119 · 59 | 1,800 s |
 
-- **All 1,200 lines are byte-for-byte the same as the reference** in `runners/computer/expected.txt`: who answered,
+- **All 1,200 lines are byte-for-byte the same as 1.0's reference** (`../expected-1.0.txt`): who answered,
   both answers, the self-check, right or wrong. Who answered is the same on every core too: AM 80, AM's splitter 29,
   the net 127, CANNOT 64.
 - On every core the brain reported 5,216 bytes of state. Its stack bound was 2,960 bytes on the M4F and the M33,
@@ -24,7 +28,7 @@ connected: QEMU runs a chip's instructions on a PC, but not its real timing or p
 Check the logs yourself:
 
 ```bash
-python3 runners/wokwi/check_log.py results/qemu/logs/m4f.log
+python3 runners/wokwi/check_log.py results/qemu/logs/m4f.log results/expected-1.0.txt
 python3 score.py results/qemu/logs/m4f.log
 ```
 

@@ -11,7 +11,7 @@ No hardware needed: [Wokwi](https://wokwi.com) simulates the Pico 2 (RP2350, Cor
    GP1) to the serial monitor.
 2. Click into the code editor, press **F1**, choose **Upload Firmware and Start Simulation...**, and pick a `.uf2` file.
 3. The serial monitor shows one line per problem, then the score. The quick set ends with `SUMMARY right 9/9`, the
-   full set with `SUMMARY right 275/300`.
+   full set with `SUMMARY right 274/300`.
 4. Copy the serial monitor's text into a file, then run `python3 check_log.py that-file.txt`. It compares every line with
    the reference answers in `expected.txt`.
 

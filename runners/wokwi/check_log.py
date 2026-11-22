@@ -1,9 +1,10 @@
 """Checks the text from the simulator (or a board) against the reference answers, problem by problem, even when only
-some problems ran.   python3 check_log.py wokwi-output.txt"""
+some problems ran.   python3 check_log.py wokwi-output.txt [reference]   (the reference defaults to expected.txt here)"""
 import os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 norm = lambda l: " ".join(l.split())                       # a pasted log may lose repeated spaces
-ref = {l.split()[0]: norm(l) for l in open(os.path.join(HERE, "expected.txt")).read().splitlines() if re.match(r"^p\d{3} ", l)}
+REF = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "expected.txt")
+ref = {l.split()[0]: norm(l) for l in open(REF).read().splitlines() if re.match(r"^p\d{3} ", l)}
 got = {}
 for line in open(sys.argv[1], errors="replace").read().splitlines():
     m = re.match(r"^\s*(p\d{3}) ", line)

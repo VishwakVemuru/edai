@@ -123,7 +123,7 @@ p121 rule  by=AM ans=93,110 right=1
 p122 noise by=CANNOT ans=CANNOT check=0 right=1
 p123 noise by=CANNOT ans=CANNOT check=250 right=1
 p124 rule  by=SPLITTER ans=86,82 right=0
-p125 rule  by=AM ans=6,7 right=0
+p125 rule  by=NET ans=-55,3 check=833 right=0
 p126 rule  by=SPLITTER ans=125,36 right=1
 p127 trend by=NET ans=-380,-11 check=917 right=1
 p128 rule  by=AM ans=136,171 right=1
@@ -200,7 +200,7 @@ p198 trend by=NET ans=-1,25 check=750 right=1
 p199 rule  by=SPLITTER ans=6241,4225 right=1
 p200 noise by=CANNOT ans=CANNOT check=125 right=1
 p201 trend by=NET ans=56,-157 check=1000 right=1
-p202 rule  by=AM ans=-18,104 right=0
+p202 rule  by=NET ans=-7,105 check=917 right=0
 p203 rule  by=AM ans=71,88 right=1
 p204 noise by=CANNOT ans=CANNOT check=125 right=1
 p205 trend by=NET ans=218,2 check=1000 right=1
@@ -254,7 +254,7 @@ p252 trend by=NET ans=259,178 check=1000 right=1
 p253 rule  by=AM ans=77,92 right=1
 p254 noise by=CANNOT ans=CANNOT check=333 right=1
 p255 noise by=CANNOT ans=CANNOT check=0 right=1
-p256 rule  by=AM ans=2,1 right=0
+p256 rule  by=NET ans=-3,15671 check=833 right=0
 p257 trend by=NET ans=-63,-79 check=875 right=1
 p258 trend by=NET ans=-130,-94 check=1000 right=1
 p259 rule  by=AM ans=-2998,7231 right=1

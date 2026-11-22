@@ -2,7 +2,8 @@
 
 The brain squeezed onto the Arduino Uno's ATmega328P, an 8-bit chip with 2 KB of RAM and 32 KB of flash, running at
 16 MHz. It keeps the same design as the full brain:
-- **AM** finds the exact rule behind the examples, and **its splitter** finds rules that hold in pieces.
+- **AM** looks for an exact rule behind the examples, made of short chains of its steps, and **its splitter** finds
+  rules that hold in pieces.
 - **A small neural net** learns the examples when there is no exact rule, and checks itself first.
 - **Otherwise it says CANNOT.**
 
@@ -33,6 +34,10 @@ A partner ran it on a real Arduino Uno on 22 November 2026. Its log is in `../..
 
 AM and its splitter are the same code with smaller buffers: the 22 splitter pieces are all that 12 examples can need,
 so their answers don't change.
+
+**The Uno edition is built from version 1.0 of the brain**, before AM's proof was added (see the main README). AM's
+proof alone compiles to 2,274 bytes for the ATmega328P, and the Uno edition has 320 bytes of flash left, so it stays
+at 1.0: its exact answers are not checked a second time. Its 9 answers on the quick set are the same as 1.1's.
 
 **On a computer, with the same code,** the Uno edition gets **216 of the 242 x → y problems** among the main 300 right,
 against **219** for the full brain on the same problems. **All 71 of its exact-rule answers are the same as the full
