@@ -2,11 +2,12 @@
 some problems ran.   python3 check_log.py wokwi-output.txt"""
 import os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
-ref = {l.split()[0]: l for l in open(os.path.join(HERE, "expected.txt")).read().splitlines() if re.match(r"^p\d{3} ", l)}
+norm = lambda l: " ".join(l.split())                       # a pasted log may lose repeated spaces
+ref = {l.split()[0]: norm(l) for l in open(os.path.join(HERE, "expected.txt")).read().splitlines() if re.match(r"^p\d{3} ", l)}
 got = {}
 for line in open(sys.argv[1], errors="replace").read().splitlines():
     m = re.match(r"^\s*(p\d{3}) ", line)
-    if m: got[m.group(1)] = re.sub(r" ms=\S+ cycles=\S+\s*$", "", line.strip())
+    if m: got[m.group(1)] = norm(re.sub(r" ms=\S+ cycles=\S+\s*$", "", line.strip()))
 same = [p for p in got if got[p] == ref.get(p)]
 print(f"problems the chip answered: {len(got)}")
 print(f"the same line as the reference (who answered, both answers, self-check, right or wrong): {len(same)} of {len(got)}")

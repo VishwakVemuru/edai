@@ -41,9 +41,17 @@
   "score": "not run yet"
  },
  {
-  "device": "Raspberry Pi Pico 2, simulated in Wokwi",
-  "how": "runners/wokwi",
-  "score": "not run yet"
+  "device": "Raspberry Pi Pico 2 (RP2350, Cortex-M33, 150 MHz), simulated in Wokwi",
+  "how": "runners/wokwi, quick set of 9",
+  "score": "9/9",
+  "rules": "3/3",
+  "trends": "3/3",
+  "noise": "3/3",
+  "same_answers_as_reference": "9 of 9",
+  "simulated_seconds": 96.4,
+  "brain_bytes": 5216,
+  "stack_bound_bytes": 2960,
+  "log": "results/wokwi-pico2-quick.txt (recorded while challengers/beat was being built)"
  },
  {
   "device": "Raspberry Pi Pico 2 or Pico, a real board",

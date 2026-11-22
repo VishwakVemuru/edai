@@ -2,8 +2,9 @@
 
 A small brain for edge devices answers 300 problems from a handful of examples each. It joins AM, a reasoner that
 finds the exact rule behind examples, with a small neural net that estimates when no rule exists and checks itself
-first. It scores **275 of 300**. It is supplied here **compiled**, so that **anyone can replicate the result** on their
-own device, and anyone can try to beat it.
+first. It scores **275 of 300**, holds that score on 1,500 problems nobody had seen, and needs only **about 8 KB of
+memory**. It is supplied here **compiled**, so that **anyone can replicate the result** on their own device, and anyone
+can try to beat it.
 
 ## The 300 problems
 
@@ -25,12 +26,13 @@ own device, and anyone can try to beat it.
 | Mac, Apple silicon | `runners/browser` (in the browser) | **275** | 97 · 119 · 59 | 13.2 s |
 | iPhone | `runners/browser` (in the browser) | **275** | not recorded | not recorded |
 | Other phones | `runners/browser` | not run yet | | |
-| Raspberry Pi Pico 2, simulated in Wokwi | `runners/wokwi` | not run yet | | |
+| Raspberry Pi Pico 2, simulated in Wokwi | `runners/wokwi`, quick set of 9 | **9 of 9** | 3 · 3 · 3 | 96 s (simulated) |
 | Raspberry Pi Pico 2 or Pico, a real board | `runners/pico` | waiting for a board | | |
 
 On the Mac the native run gives, problem by problem, the very same line as the reference in
 `runners/computer/expected.txt`: who answered, both answers, the self-check, right or wrong. An iPhone, running the
-browser page, gave the same score: 275.
+browser page, gave the same score: 275. On the simulated Pico 2, the 9 problems of the quick set gave the same answers
+as the reference (`results/wokwi-pico2-quick.txt`, recorded while the challenger below was being built).
 
 Who answered the 300: AM 80 (exact rules), AM's splitter 29 (exact rules in pieces), the net 127 (estimates that
 passed its self-check), and CANNOT 64.
@@ -72,6 +74,52 @@ It followed drift and smooth movement closely, and answered exactly when the mot
 readings that follow no pattern: 97% of scrambled readings and 91% of random shaking. Given a neighbouring sensor, it
 caught a drifting one up to 14 hours before the reading passed 35 °C. The numbers, and how to replicate them, are in
 [`sensors/README.md`](sensors/README.md).
+
+## Challengers
+
+[`challengers/beat`](challengers/beat/README.md) is an open-source solver written to beat this brain, with every source
+file, answer and script. Its author designed it on the main set and fresh seeds 23 and 24, and held seeds 25 to 27 back.
+
+| | edai | beat, portable | beat, deep |
+|---|---|---|---|
+| **held-out sets (seeds 25–27)** | **826** | 810 | 821 |
+| all six sets (including beat's design sets) | 1,649 | 1,646 | 1,666 |
+| memory | **about 8 KB** | 147 KB of static RAM | a few MB (computers only) |
+
+On the held-out sets beat leads on rules (302 against 300) and edai leads on trends (346 against 340) and noise (180
+against 179). edai chose its settings on a separate design set and used none of these sets, so 826 is the cleaner
+number. beat's own README says where each of its sets was used.
+
+## How it fits in 8 KB of memory
+
+The brain keeps everything in one object of 5,216 bytes, which you place wherever you like (static memory, a task's
+stack, a pool). It reports this itself: on the Pico 2 it prints `brain 5216 bytes, stack bound 2960 bytes`.
+
+| What the 5,216 bytes hold | Bytes |
+|---|---|
+| the problem in hand: up to 16 examples and 2 questions | 288 |
+| the net's 289 learned numbers | 1,156 |
+| what learning needs: two running averages and the current slope for each number | 3,468 |
+| the 72 units' values and two counters | 296 |
+| a check word | 8 |
+| **total** | **5,216** |
+
+It needs so little because:
+1. **It keeps no model.** It learns each problem from that problem's own few examples, from scratch, and keeps nothing
+   afterwards, so there are no stored weights and no training data. The same 5,216 bytes serve every problem.
+2. **The net is small:** 289 numbers in 32-bit floating point. With what learning needs, that is 4,920 bytes.
+3. **AM keeps no tables.** It tries each short chain of integer steps in turn and keeps only the best answer for each
+   part of the problem, so its search fits on the stack.
+4. **No heap, and no globals.** The library never allocates memory and has no global or static data of its own: all
+   state is in the object you own.
+5. **The stack is bounded and measured:** the deepest any call goes is worked out from the compiler's frame sizes. It is
+   at most 3,072 bytes on any target, and 2,960 bytes on the Pico 2's Cortex-M33.
+6. **Its maths is its own.** `exp`, `tanh` and square roots are computed by the library's own code, with no tables and no
+   maths library. That is also why every chip gives the same answers.
+
+The trade is time. Because it learns on every question, it spends time where other solvers spend memory: about 20 ms
+per problem on a Mac and 69 ms per sensor question on an iPhone. On the simulated 150 MHz Pico 2 an exact rule takes
+about 45 ms, and a problem the net must learn takes about 15 s.
 
 ## Replicate it
 
@@ -139,6 +187,7 @@ python3 score.py your-answers-23.txt --key problems/fresh/seed-23/answers.json
 | `runners/pico/` | the programs for a Pico 2 and the original Pico, the reader and checker, and the program's source for reference |
 | `runners/wokwi/` | the programs for a simulated Pico 2 in the Wokwi browser simulator, and a checker |
 | `sensors/` | the brain on real sensor data: the tools, the phone page and the results |
+| `challengers/beat/` | an open-source challenger, with its source, answers and results |
 | `results/results.json` | the results above |
 
 ## About the brain
@@ -146,6 +195,6 @@ python3 score.py your-answers-23.txt --key problems/fresh/seed-23/answers.json
 - **What it does:** when an exact rule behind the examples exists, AM finds it. When none exists, the net learns the
   examples and estimates, but only after checking itself on examples it hid from itself. Otherwise it says CANNOT.
 - **What it needs:** about 8 KB of memory (5,216 bytes of state and at most 3 KB of stack), and no training data,
-  network, operating system or memory allocation.
+  network, operating system or memory allocation. See "How it fits in 8 KB of memory" above.
 - **Its size:** on an Arm microcontroller a complete program around it takes about 28 KB of program space.
 - **How it is supplied:** compiled. These files are here so that anyone can check the results.
