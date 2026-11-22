@@ -1,0 +1,47 @@
+[
+ {
+  "device": "Mac, Apple silicon",
+  "how": "runners/computer (native library macos-arm64)",
+  "score": 275,
+  "rules": 97,
+  "trends": 119,
+  "noise": 59,
+  "same_lines_as_reference": 300,
+  "seconds_whole_program": 10.3,
+  "who_answered": {
+   "AM": 80,
+   "SPLITTER": 29,
+   "NET": 127,
+   "CANNOT": 64
+  }
+ },
+ {
+  "device": "Mac, Apple silicon",
+  "how": "runners/browser",
+  "score": 275,
+  "rules": 97,
+  "trends": 119,
+  "noise": 59,
+  "brain_seconds": 13.2,
+  "median_ms": {
+   "rule": 15.0,
+   "trend": 61.5,
+   "noise": 59.8
+  }
+ },
+ {
+  "device": "phones",
+  "how": "runners/browser",
+  "score": "not run yet"
+ },
+ {
+  "device": "Raspberry Pi Pico 2, simulated in Wokwi",
+  "how": "runners/wokwi",
+  "score": "not run yet"
+ },
+ {
+  "device": "Raspberry Pi Pico 2 or Pico, a real board",
+  "how": "runners/pico",
+  "score": "waiting for a board"
+ }
+]
