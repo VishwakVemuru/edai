@@ -1,0 +1,5 @@
+build/
+out/
+tools/native_solve
+tools/beat_solve
+official/build/
