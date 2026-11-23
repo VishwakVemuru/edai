@@ -3,9 +3,17 @@
 A small brain for edge devices answers 300 problems from a handful of examples each. It joins AM, a reasoner that
 finds exact rules and proves them before giving them, with a small neural net that is AM's light: it shows AM where to
 search, and when there is no rule, it estimates, after checking itself first. It scores **274 of 300**, holds that
-score on 1,500 problems nobody had seen, and needs only **about 8 KB of memory**. A cut-down edition answered its 9 test problems on
-a real 8-bit **Arduino Uno**, exactly as the computer did. It is supplied here **compiled**, so that **anyone can
-replicate the result** on their own device, and anyone can try to beat it.
+score on 1,500 problems nobody had seen, and needs only **about 8 KB of memory**. A cut-down edition answered its 9
+test problems on a real 8-bit **Arduino Uno**, exactly as the computer did. It is supplied here **compiled**, so that
+**anyone can replicate the result** on their own device, and anyone can try to beat it.
+
+**Current version: 1.2** (23 November 2026).
+
+| Version | What it added |
+|---|---|
+| **1.2** | The net is AM's light: when AM's first look finds no rule, AM searches again where the net points, which way the rule runs and how steeply, and which examples look wrong. Falling lines go from 2 to 295 of 300, and a line with one wrong example from 33 to 243. A new answer kind, `AM_EST`, marks a rule found with doubted examples set aside. [More](#version-12-the-net-is-ams-light) |
+| **1.1** | AM proves its answers: an exact answer never contradicts an example (329 such answers on the issue's tests in 1.0, 0 since). [More](#version-11-am-proves-its-answers) |
+| **1.0** | The first public brain: AM, its splitter and a small net that checks itself, 275 of 300. |
 
 ## The 300 problems
 
