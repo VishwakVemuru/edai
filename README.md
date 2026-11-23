@@ -1,9 +1,9 @@
 # edai: the 300-problem challenge
 
 A small brain for edge devices answers 300 problems from a handful of examples each. It joins AM, a reasoner that
-looks for an exact rule behind the examples and proves its answer before giving it, with a small neural net that
-estimates when there is no such rule and checks itself first. It scores **274 of 300**, holds that score on 1,500
-problems nobody had seen, and needs only **about 8 KB of memory**. A cut-down edition answered its 9 test problems on
+finds exact rules and proves them before giving them, with a small neural net that is AM's light: it shows AM where to
+search, and when there is no rule, it estimates, after checking itself first. It scores **274 of 300**, holds that
+score on 1,500 problems nobody had seen, and needs only **about 8 KB of memory**. A cut-down edition answered its 9 test problems on
 a real 8-bit **Arduino Uno**, exactly as the computer did. It is supplied here **compiled**, so that **anyone can
 replicate the result** on their own device, and anyone can try to beat it.
 
@@ -18,6 +18,41 @@ replicate the result** on their own device, and anyone can try to beat it.
 - `problems/problems.json` holds the problems.
 - `problems/answers.json` is the key: the kind of each problem, its answer and, for trends, the tolerance.
 - `score.py` scores any answers file.
+
+## Version 1.2: the net is AM's light
+
+AM is like an army that captures rules exactly, and the net is the light that shows it where to go. In version 1.2
+(23 November 2026), when AM's first look finds no rule it can prove, the net learns the examples, and AM searches again
+where the net points:
+
+1. **Which way and how steeply.** AM's steps cannot build a falling line, such as y = −5x + 60, on their own. The net's
+   own values show whether the rule falls and roughly how steep it is. AM then searches the problem turned over, or with
+   that slope taken off. A rule it proves there, put back, fits every example of its lane: an exact answer.
+2. **Which examples look wrong.** The net points at the examples it missed most when it hid them. AM sets them aside, one
+   at a time and then the first two together, and looks for a proven rule in the rest. Its answer is an estimate,
+   reported as `AM_EST` (`AA_AM_ESTIMATE`), because it disagrees with the examples set aside.
+3. If AM still finds no rule, the net's own checked estimate, or CANNOT.
+
+A rule found where the net points must also be unambiguous: every rule of AM's of that shortest length must give the same
+answer. AM's rule for a constant, for example, is a cut-off rule that only matches inside the examples, and without this
+check some answers outside the examples would hang on which of several equally short rules AM picked.
+
+| Through the public library (`tests/light`, `tests/exactness`) | 1.1 | 1.2 |
+|---|---|---|
+| falling lines y = −a·x + b (300) | 2 | **295** (0 wrong answers called exact) |
+| steep lines y = a·x + b, a from 10 to 40 (300) | 120 | **174** (2 wrong answers called exact) |
+| a line with one wrong example (300) | 33 | **243** (11 wrong answers called exact; 1.1: 9) |
+| a line with two wrong examples, 12 examples (300) | 12 | **149** (1 wrong answer called exact; 1.1: 0) |
+| plain noise, CANNOT is right (300) | 297 | 297 |
+| exact answers that contradict their own examples (2,600 problems) | 0 | **0** |
+| edai's main set and five fresh sets (1,800 problems): right, and wrong answers called exact | 1,647 (51) | **1,649 (51)** |
+
+The issue's falling line y = −5x + 60 is now answered exactly: −90 and −440. The issue author's own probes
+(`tests/probes`) give the same picture: right answers on their 20 families of simple rules went from 2,460 to 2,764
+of 6,000, with 0 exact answers contradicting an example in 9,000, and 0 on impossible data. On the main set the score stays 274; one
+answer changed (p166, from CANNOT to an AM_EST estimate, wrong either way). The cost is time on problems AM's first look
+cannot answer: up to 2 more searches of AM's where the net's light points and 4 where its doubts point. On a Mac all
+300 take 12.4 s instead of 6.7 s; exact rules AM finds at once take no longer.
 
 ## Version 1.1: AM proves its answers
 
@@ -46,7 +81,8 @@ checked on. On the main set it changed 3 answers (p159, p177, p236), none of the
 
 What 1.1 does not change:
 - **AM's steps are a fixed set**: 128 steps, in chains of up to three. Some simple rules are out of their reach, a line
-  with a negative slope among them. The net answers those, as estimates.
+  with a negative slope among them. (Since 1.2 the net's light lets AM reach falling and steeper lines; other forms
+  are still out of reach, and the net answers those as estimates.)
 - **Exact means exact for the rule found.** Where the examples fit more than one rule, AM gives the shortest chain of
   its steps, which need not be the rule that made them. Every rule it gives fits the examples.
 - **A few examples that take only 2 to 4 values can fit a rule by chance.** With 8 examples of 0/1 noise, 341 of 400
@@ -59,18 +95,19 @@ this repository's history.
 
 | Device | How it ran | Version | Score | Rules · trends · noise | Time for all 300 |
 |---|---|---|---|---|---|
-| Mac, Apple silicon | `runners/computer` (native library) | 1.1 | **274** | 96 · 119 · 59 | 6.7 s |
-| Mac, Apple silicon | `runners/browser` (in the browser) | 1.1 | **274** | 96 · 119 · 59 | 8.8 s |
+| Mac, Apple silicon | `runners/computer` (native library) | 1.2 | **274** | 96 · 119 · 59 | 12.4 s |
+| Mac, Apple silicon | `runners/browser`'s own brain (WebAssembly, run in node) | 1.2 | **274** | 96 · 119 · 59 | 17.3 s |
 | iPhone | `runners/browser` (in the browser) | 1.0 | **275** | not recorded | not recorded |
 | Other phones | `runners/browser` | | not run yet | | |
 | Raspberry Pi Pico 2, simulated in Wokwi | `runners/wokwi`, quick set of 9 | 1.0 | **9 of 9** | 3 · 3 · 3 | 96 s (simulated) |
 | Arm Cortex-M4F, M7, M33 and M0, emulated in QEMU | `results/qemu`, all 300 on each | 1.0 | **275** on all four | 97 · 119 · 59 | 6 to 30 min (emulator) |
 | **Arduino Uno, a real board** (ATmega328P: 8-bit, 2 KB of RAM) | `runners/uno`, the Uno edition, quick set of 9 | 1.0 | **9 of 9**, every line the same | 3 · 3 · 3 | 92 min |
-| Raspberry Pi Pico 2 or Pico, a real board | `runners/pico` | 1.1 | waiting for a board | | |
+| **Raspberry Pi Pico, a real board** (RP2040, no floating-point unit) | `runners/pico`, all 300 | 1.1 | running when 1.2 was published: its first 104 answers were all the same as 1.1's reference (`results/expected-1.1.txt`) | | about 4 h |
+| Raspberry Pi Pico 2, a real board | `runners/pico` | 1.2 | waiting for a board | | |
 
-On the Mac, version 1.1 gives, problem by problem, the very same line as the reference in
-`runners/computer/expected.txt`, natively and in the browser: who answered, both answers, the self-check, right or
-wrong. The rows marked 1.0 were run before 1.1 existed:
+On the Mac, version 1.2 gives, problem by problem, the very same line as the reference in
+`runners/computer/expected.txt`, natively and in the browser page's own brain: who answered, both answers, the
+self-check, right or wrong. The rows marked 1.0 and 1.1 were run with those versions:
 - An iPhone, running the browser page, gave 275.
 - On the simulated Pico 2, the 9 problems of the quick set gave the same lines as the reference
   (`results/wokwi-pico2-quick.txt`). Version 1.1 gives those 9 problems the very same lines.
@@ -84,8 +121,8 @@ the same as the reference, line for line, and the program's memory peaked at 1,9
 a net of 8 units instead of 72, and x → y problems only. It stays at version 1.0: AM's proof alone takes 2,274 bytes
 of the chip's flash, and the Uno edition has 320 left. Its README says exactly what differs.
 
-Who answered the 300: AM 77 (exact rules, proven), AM's splitter 29 (exact rules in pieces), the net 128 (estimates
-that passed its self-check), and CANNOT 66.
+Who answered the 300: AM 77 (exact rules, proven), AM's splitter 29 (exact rules in pieces), AM's estimate with
+doubted examples set aside 1, the net 128 (estimates that passed its self-check), and CANNOT 65.
 
 The brain does each step of its maths the same way on every target, so every device should give the same 300 lines.
 Running it on yours is the test.
@@ -101,16 +138,19 @@ choose anything. The brain, unchanged, scored:
 |---|---|---|
 | the main set (`problems/`) | 274 | 96 · 119 · 59 |
 | fresh, seed 23 | 270 | 94 · 117 · 59 |
-| fresh, seed 24 | 278 | 100 · 118 · 60 |
-| fresh, seed 25 | 269 | 98 · 111 · 60 |
+| fresh, seed 24 | 279 | 101 · 118 · 60 |
+| fresh, seed 25 | 270 | 99 · 111 · 60 |
 | fresh, seed 26 | 284 | 105 · 119 · 60 |
 | fresh, seed 27 | 272 | 96 · 116 · 60 |
-| **all five fresh sets** | **1,373 of 1,500** | 493 · 581 · 299 |
+| **all five fresh sets** | **1,375 of 1,500** | 495 · 581 · 299 |
 
-That is 274.6 per set on average, the same as its 274 on the main set. (Version 1.0 scored 275 and 1,374: the proof
-cost one right answer on the main set and one on seed 26.) Version 1.1's proof adds no settings, but it was tried on
+That is 275.0 per set on average, about the same as its 274 on the main set. (Version 1.0 scored 275 and 1,374;
+version 1.1, 274 and 1,373: the proof cost one right answer on the main set and one on seed 26. Version 1.2's light
+and doubts won one back on seed 24 and one on seed 25.) Version 1.1's proof adds no settings, but it was tried on
 these sets while it was built: a first, stricter version, which asked one rule to fit every example, withdrew 67 right
-answers here, and was replaced by the version that follows AM's own lanes.
+answers here, and was replaced by the version that follows AM's own lanes. Version 1.2's light and doubts were likewise
+shaped while being measured on these sets and on the generated tests in `tests/light`: the doubts at first answered
+on 0/1 noise and the light took ambiguous rules, until the two checks described above were added.
 
 To replicate it, run `cd runners/computer && make fresh`. It runs the brain on each fresh set, scores it, and compares
 every line with that set's reference.
@@ -135,14 +175,14 @@ file, answer and script. Its author designed it on the main set and fresh seeds 
 
 | | edai | beat, portable | beat, deep |
 |---|---|---|---|
-| **held-out sets (seeds 25–27)** | **825** | 810 | 821 |
-| all six sets (including beat's design sets) | 1,647 | 1,646 | 1,666 |
+| **held-out sets (seeds 25–27)** | **826** | 810 | 821 |
+| all six sets (including beat's design sets) | 1,649 | 1,646 | 1,666 |
 | memory | **about 8 KB** | 147 KB of static RAM | a few MB (computers only) |
 
-On the held-out sets beat leads on rules (302 against 299) and edai leads on trends (346 against 340) and noise (180
-against 179). edai chose its settings on a separate design set and used none of these sets, so 825 is the cleaner
-number. beat's own README says where each of its sets was used; it compares with version 1.0, which had 826 and
-1,649.
+On the held-out sets beat leads on rules (302 against 300) and edai leads on trends (346 against 340) and noise (180
+against 179). edai chose its settings on a separate design set, so 826 is the cleaner number, though its 1.1 and 1.2
+changes were measured on these sets too (see "Fresh problems"). beat's own README compares with version 1.0, which also
+had 826 and 1,649.
 
 ## How it fits in 8 KB of memory
 
@@ -207,10 +247,11 @@ copy the `.uf2` file onto the board's drive and run `python3 runners/pico/read.p
 **On a simulated Pico 2, with no hardware.** Open https://wokwi.com/projects/new/pi-pico-2, press F1 in the code editor,
 choose **Upload Firmware and Start Simulation...**, and pick a file from `runners/wokwi`. See `runners/wokwi/README.md`.
 
-**Check that no exact answer contradicts its examples.**
+**Check that no exact answer contradicts its examples, and what the net's light adds.**
 
 ```bash
 cd tests/exactness && make
+cd ../light && make
 ```
 
 **Check the files.** `SHA256SUMS.txt` lists the fingerprint of every compiled file:
@@ -250,14 +291,17 @@ python3 score.py your-answers-23.txt --key problems/fresh/seed-23/answers.json
 | `sensors/` | the brain on real sensor data: the tools, the phone page and the results |
 | `challengers/beat/` | an open-source challenger, with its source, answers and results |
 | `tests/exactness/` | the issue's kinds of test, through the public library: no exact answer may contradict its examples |
-| `results/` | the results above: `results.json`, the simulated Pico 2's log, the emulated cores' logs and test program (`results/qemu`), the real Uno's log (`results/uno`), and version 1.0's reference (`expected-1.0.txt`) |
+| `tests/light/` | what the net's light and doubts add: falling and steep lines, lines with wrong examples, noise |
+| `tests/probes/` | the issue author's probes: their generators, scripts and results for 1.1 and 1.2 |
+| `results/` | the results above: `results.json`, the simulated Pico 2's log, the emulated cores' logs and test program (`results/qemu`), the real Uno's log (`results/uno`), and the references of versions 1.0 and 1.1 (`expected-1.0.txt`, `expected-1.1.txt`) |
 
 ## About the brain
 
 - **What it does:** AM looks for a rule, made of short chains of its integer steps, that fits the examples, and it
-  proves its answer before calling it exact. When there is no such rule, the net learns the examples and estimates,
-  but only after checking itself on examples it hid from itself. Otherwise it says CANNOT.
+  proves its answer before calling it exact. When its first look finds nothing, the net learns the examples and shows
+  AM where to search again. When there is still no rule, the net estimates, but only after checking itself on examples
+  it hid from itself. Otherwise it says CANNOT.
 - **What it needs:** about 8 KB of memory (5,216 bytes of state and at most 3 KB of stack), and no training data,
   network, operating system or memory allocation. See "How it fits in 8 KB of memory" above.
-- **Its size:** on an Arm microcontroller a complete program around it takes about 28 to 29 KB of program space.
+- **Its size:** on an Arm microcontroller a complete program around it takes about 31 KB of program space.
 - **How it is supplied:** compiled. These files are here so that anyone can check the results.

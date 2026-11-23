@@ -43,7 +43,7 @@ p041 trend by=NET ans=102,111 check=625 right=1
 p042 trend by=NET ans=-125,-746 check=625 right=1
 p043 trend by=NET ans=-315,-2 check=875 right=1
 p044 trend by=NET ans=-95,-109 check=917 right=1
-p045 rule  by=NET ans=19231,19348 check=750 right=0
+p045 rule  by=AM ans=21393,21657 check=750 right=1
 p046 noise by=CANNOT ans=CANNOT check=167 right=1
 p047 noise by=CANNOT ans=CANNOT check=167 right=1
 p048 noise by=CANNOT ans=CANNOT check=125 right=1
@@ -298,4 +298,4 @@ p296 rule  by=AM ans=28,24 right=0
 p297 trend by=NET ans=1092,359 check=750 right=1
 p298 trend by=NET ans=-96,-38 check=917 right=1
 p299 rule  by=AM ans=245,334 right=1
-SUMMARY right 278/300 rules 100/120 trends 118/120 noise 60/60 (library macos-arm64)
+SUMMARY right 279/300 rules 101/120 trends 118/120 noise 60/60 (library macos-arm64)

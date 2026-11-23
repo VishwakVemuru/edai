@@ -37,12 +37,12 @@ static char *put(char *p, const char *s) { while (*s) *p++ = *s++; *p = 0; retur
 void h_line(char *buf, int i, int32_t rc, const aa_answer *a, int right)
 {
     static const char *FAM[3] = { "rule ", "trend", "noise" };
-    static const char *BY[4] = { "CANNOT", "AM", "SPLITTER", "NET" };
+    static const char *BY[5] = { "CANNOT", "AM", "SPLITTER", "NET", "AM_EST" };
     char *p = buf;
     *p++ = 'p'; *p++ = (char)('0' + i / 100); *p++ = (char)('0' + i / 10 % 10); *p++ = (char)('0' + i % 10); *p++ = ' ';
     p = put(p, FAM[PROBLEMS[i].family]);
     if (rc != AA_OK) { p = put(p, " error="); p = h_i64(p, rc); return; }
-    p = put(p, " by="); p = put(p, (a->by >= 0 && a->by <= 3) ? BY[a->by] : "?");
+    p = put(p, " by="); p = put(p, (a->by >= 0 && a->by <= 4) ? BY[a->by] : "?");
     p = put(p, " ans=");
     if (a->by == AA_CANNOT) p = put(p, "CANNOT");
     else { p = h_i64(p, a->value[0]); *p++ = ','; p = h_i64(p, a->value[1]); }

@@ -18,15 +18,18 @@ make                      # on a Mac with Apple silicon
 make TARGET=linux-x86_64  # or linux-aarch64, on Linux
 ```
 
-| | Version 1.0 | Version 1.1 |
-|---|---:|---:|
-| two-piece rule: exact answers / contradicting | 939 / 16 | 907 / **0** |
-| a line plus a contradicting example, 8 examples | 142 / 142 | 0 / **0** |
-| the same, 12 examples | 84 / 84 | 0 / **0** |
-| noise with 2 values | 341 / 0 | 341 / **0** |
-| noise with 4 values | 389 / 87 | 199 / **0** |
-| **all 2,600: exact answers that contradict their examples** | **329** | **0** |
+| | Version 1.0 | Version 1.1 | Version 1.2 |
+|---|---:|---:|---:|
+| two-piece rule: exact answers / contradicting | 939 / 16 | 907 / **0** | 912 / **0** |
+| a line plus a contradicting example, 8 examples | 142 / 142 | 0 / **0** | 0 / **0** |
+| the same, 12 examples | 84 / 84 | 0 / **0** | 0 / **0** |
+| noise with 2 values | 341 / 0 | 341 / **0** | 342 / **0** |
+| noise with 4 values | 389 / 87 | 199 / **0** | 199 / **0** |
+| **all 2,600: exact answers that contradict their examples** | **329** | **0** | **0** |
 
-The Makefile shows how to run the same test on version 1.0 from this repository's history. Noise with only two values
+Version 1.2's light also answers the issue's falling line y = −5x + 60 exactly (−90, −440), where 1.1 gave the net's
+estimate (−91, −434).
+
+The Makefile shows how to run the same test on version 1.0 from this repository's history (or 1.1: commit e75b0a3). Noise with only two values
 still gets an exact answer on 341 of 400 draws: 8 such examples often fit a short rule by chance, and that rule does
 fit every example.

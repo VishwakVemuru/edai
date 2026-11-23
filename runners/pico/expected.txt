@@ -164,7 +164,7 @@ p162 rule  by=AM ans=3,0 right=1
 p163 rule  by=AM ans=89,83 right=1
 p164 noise by=CANNOT ans=CANNOT check=0 right=1
 p165 trend by=NET ans=-701,-750 check=1000 right=1
-p166 rule  by=CANNOT ans=CANNOT check=375 right=0
+p166 rule  by=AM_EST ans=0,0 check=375 right=0
 p167 trend by=NET ans=31,32 check=875 right=1
 p168 trend by=NET ans=-122,-265 check=917 right=1
 p169 rule  by=SPLITTER ans=11,64 right=1

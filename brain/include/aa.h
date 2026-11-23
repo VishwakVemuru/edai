@@ -1,8 +1,8 @@
 /* aa.h -- the edai brain's public header.  The brain itself is supplied as compiled libraries (../lib/<target>/libaa.a).
 
    The brain answers small problems from a handful of examples: exactly, with a rule that AM has found and then proved
-   (an exact answer never contradicts an example); or, when there is no such rule, an estimate it has checked; or
-   CANNOT.  It needs no allocation, no operating system and no C library, keeps all its state in the objects below,
+   (an exact answer never contradicts an example), searching where its net points when its first look finds nothing;
+   or, when there is no such rule, an estimate; or CANNOT.  It needs no allocation, no operating system and no C library, keeps all its state in the objects below,
    and gives the same answers on every target.
 
    Quick start:
@@ -23,7 +23,7 @@ extern "C" {
 #endif
 
 #define AA_VERSION_MAJOR 1
-#define AA_VERSION_MINOR 1
+#define AA_VERSION_MINOR 2
 #define AA_VERSION_PATCH 0
 #define AA_VERSION ((AA_VERSION_MAJOR << 16) | (AA_VERSION_MINOR << 8) | AA_VERSION_PATCH)
 uint32_t aa_version(void);
@@ -40,7 +40,9 @@ uint32_t aa_version(void);
                                   this answer, or fits all but the one to three of smallest x and every question lies
                                   at or above the rest */
 #define AA_SPLITTER  2         /* an exact rule in pieces that together cover every example */
-#define AA_NET       3         /* a checked estimate */
+#define AA_NET       3         /* a checked estimate of the net's */
+#define AA_AM_ESTIMATE 4       /* an estimate from a rule of AM's that fits every example but the one or two the net
+                                  doubted most (they disagree with it) */
 
 #define AA_MAX_EXAMPLES   16
 #define AA_MAX_QUESTIONS   2

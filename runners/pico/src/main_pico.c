@@ -53,7 +53,7 @@ static volatile int32_t init_rc = 1;
 
 /* what the summary needs, kept out of the (small) main stack */
 static uint32_t rule_us[N_RUN], trend_us[N_RUN], noise_us[N_RUN];
-static int nr, nt, nn, right_total, fam_right[3], who[4];
+static int nr, nt, nn, right_total, fam_right[3], who[5];
 static uint64_t total_us;
 static char line[192];
 
@@ -91,7 +91,7 @@ static void report(int j)
     if (HAVE_CYCLES) printf("%s ms=%s cycles=%lu\n", line, t, (unsigned long)r->cycles);
     else printf("%s ms=%s cycles=none\n", line, t);
     right_total += r->right; fam_right[PROBLEMS[pi].family] += r->right; total_us += r->us;
-    if (r->rc == AA_OK && r->a.by >= 0 && r->a.by <= 3) who[r->a.by]++;
+    if (r->rc == AA_OK && r->a.by >= 0 && r->a.by <= 4) who[r->a.by]++;
     if (PROBLEMS[pi].family == 0) rule_us[nr++] = r->us; else if (PROBLEMS[pi].family == 1) trend_us[nt++] = r->us; else noise_us[nn++] = r->us;
     gpio_xor_mask(1u << PICO_DEFAULT_LED_PIN);
 }
@@ -143,7 +143,7 @@ int main(void)
 
     sort_u32(rule_us, nr); sort_u32(trend_us, nt); sort_u32(noise_us, nn);
     printf("SUMMARY right %d/%d rules %d/%d trends %d/%d noise %d/%d\n", right_total, N_RUN, fam_right[0], nr, fam_right[1], nt, fam_right[2], nn);
-    printf("WHO AM %d SPLITTER %d NET %d CANNOT %d\n", who[1], who[2], who[3], who[0]);
+    printf("WHO AM %d SPLITTER %d AM_EST %d NET %d CANNOT %d\n", who[1], who[2], who[4], who[3], who[0]);
     char a[24], b[24];
     if (nr) { ms_text(a, rule_us[nr / 2]); ms_text(b, rule_us[nr - 1]); printf("TIME rules median %s ms, longest %s ms\n", a, b); }
     if (nt) { ms_text(a, trend_us[nt / 2]); ms_text(b, trend_us[nt - 1]); printf("TIME trends median %s ms, longest %s ms\n", a, b); }

@@ -10,8 +10,9 @@ TARGET=linux-x86_64 bash run.sh      # on Linux (or linux-aarch64)
 bash official/run.sh                 # the key cases through runners/computer/run300.c and harness.c, unmodified
 ```
 
-`run.sh` needs `cc`, `python3` and `node`, and takes a few minutes on all cores. `results-1.1.txt` is its output for
-version 1.1 on a Mac. To run it on version 1.0, check out the commit before `e75b0a3` (keep this folder).
+`run.sh` needs `cc`, `python3` and `node`, and takes a few minutes on all cores. `results-1.1.txt` and `results-1.2.txt`
+are its output for versions 1.1 and 1.2 on a Mac. To run it on version 1.0, check out the commit before `e75b0a3`
+(keep this folder).
 
 ## What each probe tests
 
@@ -29,17 +30,22 @@ Where `challengers/beat` is present, F2, F3 and F4 also run through it for compa
 
 ## Results on Apple silicon
 
-| | 1.0 | 1.1 |
-|---|---|---|
-| F1: exact answers that contradict their own examples (of 9,000) | 197 | **0** |
-| F2: exact answers for examples that contradict each other (of 1,600) | 142 | **0** |
-| 1.1 probes: exact answers on impossible data or contradicting an example (of 13,500) | — | **0** |
-| F3: right answers on simple rules (of 6,000) | 2,502 | 2,460 |
-| F3: wrong answers called exact | 434 | 241 |
-| F4: exact answers on 0/1 noise with 8 examples (of 400) | 340 | 340 |
-| Contract: cases as documented (of 43) | 42 | **43** |
-| Stack, worst over the main 300 (aa.h: at most 3,072 bytes) | 2,592 bytes | 2,592 bytes |
-| Native and WebAssembly give the same answers | 9,000 of 9,000 | 9,000 of 9,000 |
+| | 1.0 | 1.1 | 1.2 |
+|---|---|---|---|
+| F1: exact answers that contradict their own examples (of 9,000) | 197 | **0** | **0** |
+| F2: exact answers for examples that contradict each other (of 1,600) | 142 | **0** | **0** |
+| 1.1 probes: exact answers on impossible data or contradicting an example (of 13,500) | — | **0** | **0** |
+| F3: right answers on simple rules (of 6,000) | 2,502 | 2,460 | **2,764** |
+| F3: wrong answers called exact | 434 | 241 | 252 |
+| F4: exact answers on 0/1 noise with 8 examples (of 400) | 340 | 340 | 340 |
+| Contract: cases as documented (of 43) | 42 | **43** | **43** |
+| Stack, worst over the main 300 (aa.h: at most 3,072 bytes) | 2,592 bytes | 2,592 bytes | 2,640 bytes |
+| Native and WebAssembly give the same answers | 9,000 of 9,000 | 9,000 of 9,000 | 9,000 of 9,000 |
+
+`results-1.2.txt` is the same run on version 1.2 (added by the maintainer). The net's light in 1.2 mostly shows in F3:
+linear rules 179 to 289 right (falling lines are now found), cubic 98 to 203, sign-split 111 to 154, quadratic 16 to
+33; wrong answers called exact went from 241 to 252 (sign-split 12 to 18, max-const 25 to 28, linear 0 to 1, abs-linear
+10 to 11).
 
 Beyond this folder, the same comparison was run on 35,600 problems (the 1,800 published ones, 10,000 built from
 extreme int64 values, and the problems above): native and WebAssembly agreed on all of them on both versions, and the

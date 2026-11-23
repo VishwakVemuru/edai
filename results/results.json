@@ -2,6 +2,89 @@
  {
   "device": "Mac, Apple silicon",
   "how": "runners/computer (native library macos-arm64)",
+  "version": "1.2",
+  "score": 274,
+  "rules": 96,
+  "trends": 119,
+  "noise": 59,
+  "same_lines_as_reference": 300,
+  "seconds_whole_program": 12.4,
+  "who_answered": {
+   "AM": 77,
+   "SPLITTER": 29,
+   "AM_EST": 1,
+   "NET": 128,
+   "CANNOT": 65
+  },
+  "date": "2026-11-23"
+ },
+ {
+  "device": "Mac, Apple silicon",
+  "how": "runners/browser's own brain (WebAssembly, run in node)",
+  "version": "1.2",
+  "score": 274,
+  "rules": 96,
+  "trends": 119,
+  "noise": 59,
+  "same_lines_as_reference": 300,
+  "seconds": 17.3,
+  "date": "2026-11-23"
+ },
+ {
+  "device": "Mac, Apple silicon",
+  "how": "runners/computer, make fresh (five fresh sets of 300)",
+  "version": "1.2",
+  "fresh_sets": {
+   "seed 23": 270,
+   "seed 24": 279,
+   "seed 25": 270,
+   "seed 26": 284,
+   "seed 27": 272
+  },
+  "fresh_total": "1375/1500",
+  "rules": "495/600",
+  "trends": "581/600",
+  "noise": "299/300",
+  "same_lines_as_reference": "1500 of 1500",
+  "date": "2026-11-23"
+ },
+ {
+  "device": "Mac, Apple silicon",
+  "how": "tests/exactness (2,600 problems, seed 2026)",
+  "version": "1.2",
+  "exact_answers_contradicting_their_examples": 0,
+  "date": "2026-11-23"
+ },
+ {
+  "device": "Mac, Apple silicon",
+  "how": "tests/light (seed 2027, 300 problems per kind)",
+  "version": "1.2",
+  "right": {
+   "falling lines": 295,
+   "steep lines": 174,
+   "one wrong example": 243,
+   "two wrong examples": 149,
+   "plain noise (CANNOT)": 297
+  },
+  "right_with_1.1": {
+   "falling lines": 2,
+   "steep lines": 120,
+   "one wrong example": 33,
+   "two wrong examples": 12,
+   "plain noise (CANNOT)": 297
+  },
+  "wrong_answers_called_exact": {
+   "falling lines": 0,
+   "steep lines": 2,
+   "one wrong example": 11,
+   "two wrong examples": 1,
+   "plain noise (CANNOT)": 0
+  },
+  "date": "2026-11-23"
+ },
+ {
+  "device": "Mac, Apple silicon",
+  "how": "runners/computer (native library macos-arm64)",
   "version": "1.1",
   "score": 274,
   "rules": 96,
@@ -120,10 +203,10 @@
   "version": "1.0"
  },
  {
-  "device": "Raspberry Pi Pico 2 or Pico, a real board",
+  "device": "Raspberry Pi Pico 2, a real board",
   "how": "runners/pico",
   "score": "waiting for a board",
-  "version": "1.1"
+  "version": "1.2"
  },
  {
   "device": "Mac, Apple silicon",

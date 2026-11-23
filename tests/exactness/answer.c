@@ -1,6 +1,6 @@
 /* answer.c -- the brain through its public API, one problem per line on standard input:
      <id> <n> x1 .. xn y1 .. yn <nq> q1 [q2]
-   prints  <id> <AM | SPLITTER | NET | CANNOT> <a,b>   (0,0 for CANNOT) */
+   prints  <id> <AM | SPLITTER | NET | AM_EST | CANNOT> <a,b>   (0,0 for CANNOT) */
 #include <inttypes.h>
 #include <stdio.h>
 #include "aa.h"
@@ -8,7 +8,7 @@
 int main(void)
 {
     static aa_brain brain;
-    static const char *NAME[4] = { "CANNOT", "AM", "SPLITTER", "NET" };
+    static const char *NAME[5] = { "CANNOT", "AM", "SPLITTER", "NET", "AM_EST" };
     if (aa_brain_init(&brain) != AA_OK) { fprintf(stderr, "the header and the library do not match\n"); return 2; }
     char id[32]; int n, nq;
     while (scanf("%31s %d", id, &n) == 2) {

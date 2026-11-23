@@ -35,9 +35,10 @@ A partner ran it on a real Arduino Uno on 22 November 2026. Its log is in `../..
 AM and its splitter are the same code with smaller buffers: the 22 splitter pieces are all that 12 examples can need,
 so their answers don't change.
 
-**The Uno edition is built from version 1.0 of the brain**, before AM's proof was added (see the main README). AM's
-proof alone compiles to 2,274 bytes for the ATmega328P, and the Uno edition has 320 bytes of flash left, so it stays
-at 1.0: its exact answers are not checked a second time. Its 9 answers on the quick set are the same as 1.1's.
+**The Uno edition is built from version 1.0 of the brain**, before AM's proof (1.1) and the net's light (1.2) were
+added (see the main README). AM's proof alone compiles to 2,274 bytes for the ATmega328P, and the Uno edition has 320
+bytes of flash left, so it stays at 1.0: its exact answers are not checked a second time. Its 9 answers on the quick
+set are the same as 1.1's and 1.2's.
 
 **On a computer, with the same code,** the Uno edition gets **216 of the 242 x → y problems** among the main 300 right,
 against **219** for the full brain on the same problems. **All 71 of its exact-rule answers are the same as the full
