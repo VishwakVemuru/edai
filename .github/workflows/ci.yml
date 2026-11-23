@@ -74,7 +74,7 @@ jobs:
         working-directory: tests/probes
         run: |
           LIB=../../brain/lib/$TARGET/libaa.a
-          cc -std=c11 -O2 -I../../brain/include tools/stack_probe.c $LIB -o build/stack_probe -lpthread
+          cc -std=c11 -D_GNU_SOURCE -O2 -I../../brain/include tools/stack_probe.c $LIB -o build/stack_probe -lpthread
           python3 tools/to_lines.py ../../problems/problems.json | ./build/stack_probe > stack.txt 2> stack-summary.txt
           cat stack-summary.txt
           worst=$(sed -n 's/^worst library stack use: \([0-9]*\) bytes (promise: at most \([0-9]*\))$/\1 \2/p' stack-summary.txt)
@@ -155,7 +155,7 @@ jobs:
       - name: Run the main 300 in QEMU, every line the same as the reference
         run: |
           timeout 80m qemu-system-arm -M ${{ matrix.board }} -nographic -monitor none -serial none \
-            -semihosting-config enable=on,target=native -kernel test.elf > chip.log
+            -semihosting-config enable=on,target=native -kernel test.elf > chip.log 2>&1
           python3 runners/wokwi/check_log.py chip.log runners/computer/expected.txt | tee check.txt
           grep -q '^problems the chip answered: 300$' check.txt
           grep -q 'the same line as the reference .*: 300 of 300$' check.txt
