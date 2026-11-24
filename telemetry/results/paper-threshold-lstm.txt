@@ -1,0 +1,4 @@
+the paper's thresholding on the paper's LSTM forecasts:
+  SMAP   TP  62 FP  12 FN   7  precision  83.8%  recall  89.9%  F0.5 0.849
+  MSL    TP  24 FP   1 FN  12  precision  96.0%  recall  66.7%  F0.5 0.882
+  Total  TP  86 FP  13 FN  19  precision  86.9%  recall  81.9%  F0.5 0.858

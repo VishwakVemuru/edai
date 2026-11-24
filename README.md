@@ -192,6 +192,16 @@ readings that follow no pattern: 97% of scrambled readings and 91% of random sha
 caught a drifting one up to 14 hours before the reading passed 35 °C. The numbers, and how to replicate them, are in
 [`sensors/README.md`](sensors/README.md).
 
+## NASA spacecraft telemetry
+
+The same brain (version 1.2) watched NASA's public telemetry from the SMAP satellite and the Curiosity rover, the
+benchmark of Hundman et al. (KDD 2018): 82 channels and 105 labelled anomalies, every window asked "here are 12
+readings in a row, what are the next two?". AM answered 39.5% of the 508,502 test windows with a rule of its own and
+was exactly right on 95.7% of those. A detector fixed before scoring found 77 of the 105 anomalies (precision 35.5%).
+With the paper's own thresholding, the brain's forecasts gave precision 82.9% and recall 55.2%, against 86.9% and
+81.9% for the paper's LSTM, which is trained on each channel and also sees the commands sent to the spacecraft. The
+numbers, and how to replicate them, are in [`telemetry/README.md`](telemetry/README.md).
+
 ## Challengers
 
 [`challengers/beat`](challengers/beat/README.md) is an open-source solver written to beat this brain, with every source
@@ -315,6 +325,7 @@ python3 score.py your-answers-23.txt --key problems/fresh/seed-23/answers.json
 | `runners/wokwi/` | the programs for a simulated Pico 2 in the Wokwi browser simulator, and a checker |
 | `runners/uno/` | the Uno edition for the Arduino Uno: the precompiled library, the sketch, the ready program and a checker |
 | `sensors/` | the brain on real sensor data: the tools, the phone page and the results |
+| `telemetry/` | the brain on NASA spacecraft telemetry (SMAP and MSL): the program, the scripts, the protocol fixed before scoring, and the results |
 | `challengers/beat/` | an open-source challenger, with its source, answers and results |
 | `tests/exactness/` | the issue's kinds of test, through the public library: no exact answer may contradict its examples |
 | `tests/light/` | what the net's light and doubts add: falling and steep lines, lines with wrong examples, noise |

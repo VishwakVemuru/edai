@@ -1,0 +1,4 @@
+searched 140 settings on SMAP; best: floor 0.005, margin 2, cannot 0
+  SMAP_tuned_on  TP  34 FP   1 FN  35  precision  97.1%  recall  49.3%  F0.5 0.813
+  MSL_held_out   TP  10 FP   3 FN  26  precision  76.9%  recall  27.8%  F0.5 0.568
+  Total          TP  44 FP   4 FN  61  precision  91.7%  recall  41.9%  F0.5 0.741

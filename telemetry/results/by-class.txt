@@ -1,0 +1,4 @@
+detect-seq.json:  MSL contextual 5/17 = 29.4%  MSL point 16/19 = 84.2%  SMAP contextual 17/26 = 65.4%  SMAP point 39/43 = 90.7%  Total contextual 22/43 = 51.2%  Total point 55/62 = 88.7%
+paper-threshold-seq.json:  MSL contextual 5/17 = 29.4%  MSL point 13/19 = 68.4%  SMAP contextual 10/26 = 38.5%  SMAP point 30/43 = 69.8%  Total contextual 15/43 = 34.9%  Total point 43/62 = 69.4%
+detect-fill.json:  MSL contextual 8/17 = 47.1%  MSL point 13/19 = 68.4%  SMAP contextual 16/26 = 61.5%  SMAP point 39/43 = 90.7%  Total contextual 24/43 = 55.8%  Total point 52/62 = 83.9%
+paper-threshold-lstm.json:  MSL contextual 10/17 = 58.8%  MSL point 14/19 = 73.7%  SMAP contextual 21/26 = 80.8%  SMAP point 41/43 = 95.3%  Total contextual 31/43 = 72.1%  Total point 55/62 = 88.7%

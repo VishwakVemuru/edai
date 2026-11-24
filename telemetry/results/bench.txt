@@ -1,0 +1,1 @@
+brain: 3000 windows, median 12.451 ms, mean 9.322 ms; AM 1180 median 4.0291 ms; CANNOT 911 median 12.8145 ms; NET 909 median 12.6349 ms

@@ -1,0 +1,3744 @@
+{
+ "kind": "brain",
+ "answers": "out/seq",
+ "buffer": 100,
+ "score": {
+  "SMAP": {
+   "tp": 56,
+   "fp": 110,
+   "fn": 13,
+   "precision": 0.3373,
+   "recall": 0.8116,
+   "f05": 0.382
+  },
+  "MSL": {
+   "tp": 21,
+   "fp": 30,
+   "fn": 15,
+   "precision": 0.4118,
+   "recall": 0.5833,
+   "f05": 0.4375
+  },
+  "Total": {
+   "tp": 77,
+   "fp": 140,
+   "fn": 28,
+   "precision": 0.3548,
+   "recall": 0.7333,
+   "f05": 0.3957
+  }
+ },
+ "channels": {
+  "P-1": {
+   "profile": {
+    "worst_miss": 17344,
+    "longest_cannot_run": 38,
+    "answered_share": 0.2945
+   },
+   "test_windows": 8492,
+   "alarms": 12,
+   "predicted": [
+    [
+     1233,
+     1433
+    ],
+    [
+     4966,
+     5175
+    ],
+    [
+     7759,
+     7959
+    ]
+   ],
+   "miss_alarms": 1,
+   "cannot_alarms": 11
+  },
+  "S-1": {
+   "profile": {
+    "worst_miss": 23355,
+    "longest_cannot_run": 150,
+    "answered_share": 0.1176
+   },
+   "test_windows": 7318,
+   "alarms": 8,
+   "predicted": [
+    [
+     792,
+     992
+    ],
+    [
+     4268,
+     4468
+    ],
+    [
+     4918,
+     5118
+    ],
+    [
+     5402,
+     5705
+    ]
+   ],
+   "miss_alarms": 8,
+   "cannot_alarms": 0
+  },
+  "E-1": {
+   "profile": {
+    "worst_miss": 20000,
+    "longest_cannot_run": 3,
+    "answered_share": 0.9561
+   },
+   "test_windows": 8503,
+   "alarms": 3,
+   "predicted": [
+    [
+     5746,
+     5948
+    ]
+   ],
+   "miss_alarms": 0,
+   "cannot_alarms": 3
+  },
+  "E-2": {
+   "profile": {
+    "worst_miss": 11543,
+    "longest_cannot_run": 12,
+    "answered_share": 0.8249
+   },
+   "test_windows": 8519,
+   "alarms": 60,
+   "predicted": [
+    [
+     4968,
+     5171
+    ],
+    [
+     5540,
+     5765
+    ],
+    [
+     5790,
+     6016
+    ],
+    [
+     6292,
+     6494
+    ]
+   ],
+   "miss_alarms": 0,
+   "cannot_alarms": 60
+  },
+  "E-3": {
+   "profile": {
+    "worst_miss": 1419,
+    "longest_cannot_run": 31,
+    "answered_share": 0.4489
+   },
+   "test_windows": 8294,
+   "alarms": 259,
+   "predicted": [
+    [
+     356,
+     674
+    ],
+    [
+     748,
+     956
+    ],
+    [
+     1122,
+     1334
+    ],
+    [
+     1337,
+     1562
+    ],
+    [
+     1635,
+     1844
+    ],
+    [
+     2539,
+     2851
+    ],
+    [
+     2911,
+     3213
+    ],
+    [
+     3607,
+     3807
+    ],
+    [
+     4769,
+     4985
+    ],
+    [
+     5513,
+     6095
+    ],
+    [
+     6205,
+     6422
+    ],
+    [
+     6929,
+     8031
+    ]
+   ],
+   "miss_alarms": 6,
+   "cannot_alarms": 253
+  },
+  "E-4": {
+   "profile": {
+    "worst_miss": 8096,
+    "longest_cannot_run": 16,
+    "answered_share": 0.9334
+   },
+   "test_windows": 8341,
+   "alarms": 8,
+   "predicted": [
+    [
+     2350,
+     2552
+    ],
+    [
+     5642,
+     5874
+    ]
+   ],
+   "miss_alarms": 0,
+   "cannot_alarms": 8
+  },
+  "E-5": {
+   "profile": {
+    "worst_miss": 20000,
+    "longest_cannot_run": 3,
+    "answered_share": 0.9561
+   },
+   "test_windows": 8281,
+   "alarms": 12,
+   "predicted": [
+    [
+     5519,
+     5730
+    ]
+   ],
+   "miss_alarms": 0,
+   "cannot_alarms": 12
+  },
+  "E-6": {
+   "profile": {
+    "worst_miss": 103,
+    "longest_cannot_run": 7,
+    "answered_share": 0.9351
+   },
+   "test_windows": 8287,
+   "alarms": 18,
+   "predicted": [
+    [
+     5515,
+     5738
+    ]
+   ],
+   "miss_alarms": 18,
+   "cannot_alarms": 0
+  },
+  "E-7": {
+   "profile": {
+    "worst_miss": 1527,
+    "longest_cannot_run": 81,
+    "answered_share": 0.2308
+   },
+   "test_windows": 8297,
+   "alarms": 28,
+   "predicted": [
+    [
+     4764,
+     4965
+    ],
+    [
+     5342,
+     5732
+    ],
+    [
+     7650,
+     7850
+    ]
+   ],
+   "miss_alarms": 28,
+   "cannot_alarms": 0
+  },
+  "E-8": {
+   "profile": {
+    "worst_miss": 4132,
+    "longest_cannot_run": 22,
+    "answered_share": 0.7454
+   },
+   "test_windows": 8519,
+   "alarms": 18,
+   "predicted": [
+    [
+     5559,
+     5772
+    ],
+    [
+     5810,
+     6013
+    ]
+   ],
+   "miss_alarms": 0,
+   "cannot_alarms": 18
+  },
+  "E-9": {
+   "profile": {
+    "worst_miss": 3724,
+    "longest_cannot_run": 23,
+    "answered_share": 0.6997
+   },
+   "test_windows": 8289,
+   "alarms": 30,
+   "predicted": [
+    [
+     1649,
+     1851
+    ],
+    [
+     4964,
+     5178
+    ],
+    [
+     5496,
+     5793
+    ]
+   ],
+   "miss_alarms": 2,
+   "cannot_alarms": 28
+  },
+  "E-10": {
+   "profile": {
+    "worst_miss": 20008,
+    "longest_cannot_run": 5,
+    "answered_share": 0.8978
+   },
+   "test_windows": 8492,
+   "alarms": 130,
+   "predicted": [
+    [
+     2903,
+     3103
+    ],
+    [
+     4926,
+     5138
+    ],
+    [
+     5528,
+     5948
+    ],
+    [
+     6713,
+     6913
+    ]
+   ],
+   "miss_alarms": 2,
+   "cannot_alarms": 128
+  },
+  "E-11": {
+   "profile": {
+    "worst_miss": 20004,
+    "longest_cannot_run": 2,
+    "answered_share": 0.9707
+   },
+   "test_windows": 8501,
+   "alarms": 74,
+   "predicted": [
+    [
+     5593,
+     6097
+    ],
+    [
+     6162,
+     6538
+    ],
+    [
+     6812,
+     7045
+    ],
+    [
+     7050,
+     7860
+    ],
+    [
+     7996,
+     8488
+    ]
+   ],
+   "miss_alarms": 1,
+   "cannot_alarms": 73
+  },
+  "E-12": {
+   "profile": {
+    "worst_miss": 20000,
+    "longest_cannot_run": 3,
+    "answered_share": 0.9561
+   },
+   "test_windows": 8499,
+   "alarms": 6,
+   "predicted": [
+    [
+     5519,
+     5722
+    ],
+    [
+     5744,
+     5945
+    ]
+   ],
+   "miss_alarms": 2,
+   "cannot_alarms": 4
+  },
+  "E-13": {
+   "profile": {
+    "worst_miss": 17344,
+    "longest_cannot_run": 25,
+    "answered_share": 0.5542
+   },
+   "test_windows": 8627,
+   "alarms": 21,
+   "predicted": [
+    [
+     750,
+     1259
+    ],
+    [
+     5282,
+     5483
+    ],
+    [
+     5527,
+     5727
+    ],
+    [
+     5811,
+     6011
+    ],
+    [
+     6389,
+     6589
+    ],
+    [
+     6948,
+     7149
+    ],
+    [
+     7354,
+     7554
+    ],
+    [
+     7608,
+     7930
+    ],
+    [
+     8194,
+     8394
+    ],
+    [
+     8539,
+     8639
+    ]
+   ],
+   "miss_alarms": 13,
+   "cannot_alarms": 8
+  },
+  "A-1": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 8627,
+   "alarms": 13,
+   "predicted": [
+    [
+     4650,
+     4862
+    ]
+   ],
+   "miss_alarms": 8,
+   "cannot_alarms": 5
+  },
+  "D-1": {
+   "profile": {
+    "worst_miss": 4329,
+    "longest_cannot_run": 28,
+    "answered_share": 0.6823
+   },
+   "test_windows": 8496,
+   "alarms": 8,
+   "predicted": [
+    [
+     282,
+     581
+    ],
+    [
+     5507,
+     5716
+    ]
+   ],
+   "miss_alarms": 8,
+   "cannot_alarms": 0
+  },
+  "P-2": {
+   "profile": {
+    "worst_miss": 897,
+    "longest_cannot_run": 135,
+    "answered_share": 0.0816
+   },
+   "test_windows": 8196,
+   "alarms": 299,
+   "predicted": [
+    [
+     0,
+     513
+    ],
+    [
+     804,
+     1375
+    ],
+    [
+     1381,
+     1755
+    ],
+    [
+     2620,
+     3195
+    ],
+    [
+     3436,
+     3670
+    ],
+    [
+     3799,
+     4955
+    ],
+    [
+     5161,
+     7041
+    ],
+    [
+     7052,
+     8067
+    ]
+   ],
+   "miss_alarms": 299,
+   "cannot_alarms": 0
+  },
+  "P-3": {
+   "profile": {
+    "worst_miss": 11547,
+    "longest_cannot_run": 107,
+    "answered_share": 0.1953
+   },
+   "test_windows": 8480,
+   "alarms": 70,
+   "predicted": [
+    [
+     5317,
+     5646
+    ],
+    [
+     5677,
+     6724
+    ]
+   ],
+   "miss_alarms": 70,
+   "cannot_alarms": 0
+  },
+  "D-2": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 8582,
+   "alarms": 24,
+   "predicted": [
+    [
+     4590,
+     4801
+    ],
+    [
+     8395,
+     8594
+    ]
+   ],
+   "miss_alarms": 21,
+   "cannot_alarms": 3
+  },
+  "D-3": {
+   "profile": {
+    "worst_miss": 4,
+    "longest_cannot_run": 14,
+    "answered_share": 0.7468
+   },
+   "test_windows": 8627,
+   "alarms": 1240,
+   "predicted": [
+    [
+     5200,
+     8639
+    ]
+   ],
+   "miss_alarms": 1240,
+   "cannot_alarms": 0
+  },
+  "D-4": {
+   "profile": {
+    "worst_miss": 43,
+    "longest_cannot_run": 3,
+    "answered_share": 0.9926
+   },
+   "test_windows": 8460,
+   "alarms": 550,
+   "predicted": [
+    [
+     5117,
+     8472
+    ]
+   ],
+   "miss_alarms": 381,
+   "cannot_alarms": 169
+  },
+  "A-2": {
+   "profile": {
+    "worst_miss": 10928,
+    "longest_cannot_run": 96,
+    "answered_share": 0.2641
+   },
+   "test_windows": 7901,
+   "alarms": 2,
+   "predicted": [
+    [
+     4449,
+     4650
+    ]
+   ],
+   "miss_alarms": 2,
+   "cannot_alarms": 0
+  },
+  "A-3": {
+   "profile": {
+    "worst_miss": 10983,
+    "longest_cannot_run": 85,
+    "answered_share": 0.1748
+   },
+   "test_windows": 8192,
+   "alarms": 3,
+   "predicted": [
+    [
+     3856,
+     4056
+    ],
+    [
+     4543,
+     4744
+    ]
+   ],
+   "miss_alarms": 3,
+   "cannot_alarms": 0
+  },
+  "A-4": {
+   "profile": {
+    "worst_miss": 13881,
+    "longest_cannot_run": 232,
+    "answered_share": 0.0631
+   },
+   "test_windows": 8067,
+   "alarms": 476,
+   "predicted": [
+    [
+     340,
+     835
+    ],
+    [
+     6153,
+     6379
+    ],
+    [
+     6890,
+     7219
+    ],
+    [
+     7448,
+     7670
+    ]
+   ],
+   "miss_alarms": 0,
+   "cannot_alarms": 476
+  },
+  "G-1": {
+   "profile": {
+    "worst_miss": 8453,
+    "longest_cannot_run": 80,
+    "answered_share": 0.16
+   },
+   "test_windows": 8456,
+   "alarms": 4,
+   "predicted": [
+    [
+     5175,
+     5378
+    ]
+   ],
+   "miss_alarms": 0,
+   "cannot_alarms": 4
+  },
+  "G-2": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 7348,
+   "alarms": 13,
+   "predicted": [
+    [
+     3941,
+     4153
+    ]
+   ],
+   "miss_alarms": 7,
+   "cannot_alarms": 6
+  },
+  "D-5": {
+   "profile": {
+    "worst_miss": 10,
+    "longest_cannot_run": 5,
+    "answered_share": 0.9529
+   },
+   "test_windows": 7615,
+   "alarms": 75,
+   "predicted": [
+    [
+     0,
+     114
+    ],
+    [
+     261,
+     463
+    ],
+    [
+     606,
+     810
+    ],
+    [
+     883,
+     1084
+    ],
+    [
+     1568,
+     1771
+    ],
+    [
+     1851,
+     2055
+    ],
+    [
+     2152,
+     2355
+    ],
+    [
+     2506,
+     2751
+    ],
+    [
+     2804,
+     3007
+    ],
+    [
+     3155,
+     3358
+    ],
+    [
+     3474,
+     3683
+    ],
+    [
+     3756,
+     3959
+    ],
+    [
+     4047,
+     4248
+    ],
+    [
+     4376,
+     4577
+    ],
+    [
+     4713,
+     4929
+    ],
+    [
+     5010,
+     5213
+    ],
+    [
+     5335,
+     5538
+    ],
+    [
+     5656,
+     5858
+    ],
+    [
+     5975,
+     6176
+    ],
+    [
+     6341,
+     6544
+    ],
+    [
+     6681,
+     6882
+    ],
+    [
+     6946,
+     7147
+    ],
+    [
+     7225,
+     7427
+    ]
+   ],
+   "miss_alarms": 70,
+   "cannot_alarms": 5
+  },
+  "D-6": {
+   "profile": {
+    "worst_miss": 13491,
+    "longest_cannot_run": 18,
+    "answered_share": 0.6087
+   },
+   "test_windows": 7871,
+   "alarms": 8,
+   "predicted": [
+    [
+     252,
+     455
+    ],
+    [
+     4818,
+     5022
+    ]
+   ],
+   "miss_alarms": 4,
+   "cannot_alarms": 4
+  },
+  "D-7": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 7629,
+   "alarms": 95,
+   "predicted": [
+    [
+     4938,
+     5149
+    ],
+    [
+     5352,
+     5563
+    ],
+    [
+     5629,
+     5840
+    ],
+    [
+     5986,
+     6196
+    ],
+    [
+     6275,
+     6486
+    ],
+    [
+     6668,
+     6879
+    ],
+    [
+     6929,
+     7140
+    ],
+    [
+     7248,
+     7459
+    ]
+   ],
+   "miss_alarms": 71,
+   "cannot_alarms": 24
+  },
+  "F-1": {
+   "profile": {
+    "worst_miss": 12682,
+    "longest_cannot_run": 37,
+    "answered_share": 0.2738
+   },
+   "test_windows": 8571,
+   "alarms": 7,
+   "predicted": [
+    [
+     1213,
+     1610
+    ]
+   ],
+   "miss_alarms": 1,
+   "cannot_alarms": 6
+  },
+  "P-4": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 7770,
+   "alarms": 83,
+   "predicted": [
+    [
+     928,
+     1145
+    ],
+    [
+     2083,
+     2432
+    ],
+    [
+     4713,
+     4927
+    ]
+   ],
+   "miss_alarms": 39,
+   "cannot_alarms": 44
+  },
+  "G-3": {
+   "profile": {
+    "worst_miss": 20000,
+    "longest_cannot_run": 3,
+    "answered_share": 0.9989
+   },
+   "test_windows": 7894,
+   "alarms": 6,
+   "predicted": [
+    [
+     4114,
+     4322
+    ],
+    [
+     7395,
+     7596
+    ]
+   ],
+   "miss_alarms": 2,
+   "cannot_alarms": 4
+  },
+  "T-1": {
+   "profile": {
+    "worst_miss": 6423,
+    "longest_cannot_run": 56,
+    "answered_share": 0.5178
+   },
+   "test_windows": 8599,
+   "alarms": 10,
+   "predicted": [
+    [
+     142,
+     342
+    ],
+    [
+     1344,
+     1544
+    ],
+    [
+     6459,
+     6662
+    ],
+    [
+     8189,
+     8392
+    ]
+   ],
+   "miss_alarms": 5,
+   "cannot_alarms": 5
+  },
+  "T-2": {
+   "profile": {
+    "worst_miss": 6657,
+    "longest_cannot_run": 58,
+    "answered_share": 0.5081
+   },
+   "test_windows": 8612,
+   "alarms": 0,
+   "predicted": [],
+   "miss_alarms": 0,
+   "cannot_alarms": 0
+  },
+  "D-8": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 7861,
+   "alarms": 13,
+   "predicted": [
+    [
+     4286,
+     4498
+    ]
+   ],
+   "miss_alarms": 7,
+   "cannot_alarms": 6
+  },
+  "D-9": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 7393,
+   "alarms": 24,
+   "predicted": [
+    [
+     6373,
+     6584
+    ],
+    [
+     7287,
+     7405
+    ]
+   ],
+   "miss_alarms": 21,
+   "cannot_alarms": 3
+  },
+  "F-2": {
+   "profile": {
+    "worst_miss": 14879,
+    "longest_cannot_run": 27,
+    "answered_share": 0.3588
+   },
+   "test_windows": 8613,
+   "alarms": 770,
+   "predicted": [
+    [
+     6714,
+     8259
+    ],
+    [
+     8413,
+     8615
+    ]
+   ],
+   "miss_alarms": 2,
+   "cannot_alarms": 768
+  },
+  "G-4": {
+   "profile": {
+    "worst_miss": 334,
+    "longest_cannot_run": 9,
+    "answered_share": 0.8306
+   },
+   "test_windows": 7619,
+   "alarms": 8,
+   "predicted": [
+    [
+     4606,
+     4819
+    ]
+   ],
+   "miss_alarms": 8,
+   "cannot_alarms": 0
+  },
+  "T-3": {
+   "profile": {
+    "worst_miss": 94,
+    "longest_cannot_run": 33,
+    "answered_share": 0.5152
+   },
+   "test_windows": 8566,
+   "alarms": 19,
+   "predicted": [
+    [
+     2059,
+     2268
+    ],
+    [
+     3242,
+     3443
+    ],
+    [
+     3815,
+     4018
+    ],
+    [
+     4044,
+     4244
+    ],
+    [
+     5154,
+     5364
+    ],
+    [
+     8449,
+     8578
+    ]
+   ],
+   "miss_alarms": 18,
+   "cannot_alarms": 1
+  },
+  "D-11": {
+   "profile": {
+    "worst_miss": 5556,
+    "longest_cannot_run": 3,
+    "answered_share": 0.9838
+   },
+   "test_windows": 7418,
+   "alarms": 16,
+   "predicted": [
+    [
+     3151,
+     3355
+    ],
+    [
+     4202,
+     4405
+    ],
+    [
+     6055,
+     6255
+    ],
+    [
+     6561,
+     6766
+    ]
+   ],
+   "miss_alarms": 4,
+   "cannot_alarms": 12
+  },
+  "D-12": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 7905,
+   "alarms": 75,
+   "predicted": [
+    [
+     5282,
+     5493
+    ],
+    [
+     5817,
+     6028
+    ],
+    [
+     6220,
+     6432
+    ],
+    [
+     6742,
+     6953
+    ],
+    [
+     7227,
+     7440
+    ],
+    [
+     7803,
+     7917
+    ]
+   ],
+   "miss_alarms": 57,
+   "cannot_alarms": 18
+  },
+  "B-1": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 8031,
+   "alarms": 12,
+   "predicted": [
+    [
+     4977,
+     5188
+    ]
+   ],
+   "miss_alarms": 9,
+   "cannot_alarms": 3
+  },
+  "G-6": {
+   "profile": {
+    "worst_miss": 14,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 8627,
+   "alarms": 12,
+   "predicted": [
+    [
+     5553,
+     5764
+    ]
+   ],
+   "miss_alarms": 12,
+   "cannot_alarms": 0
+  },
+  "G-7": {
+   "profile": {
+    "worst_miss": 33399,
+    "longest_cannot_run": 6,
+    "answered_share": 0.9721
+   },
+   "test_windows": 8016,
+   "alarms": 4,
+   "predicted": [
+    [
+     3612,
+     3815
+    ]
+   ],
+   "miss_alarms": 0,
+   "cannot_alarms": 4
+  },
+  "P-7": {
+   "profile": {
+    "worst_miss": 14669,
+    "longest_cannot_run": 57,
+    "answered_share": 0.4134
+   },
+   "test_windows": 8058,
+   "alarms": 80,
+   "predicted": [
+    [
+     3070,
+     3272
+    ],
+    [
+     4685,
+     4885
+    ],
+    [
+     5447,
+     5654
+    ],
+    [
+     5903,
+     6128
+    ],
+    [
+     6154,
+     6386
+    ],
+    [
+     6743,
+     6949
+    ],
+    [
+     7774,
+     7975
+    ]
+   ],
+   "miss_alarms": 2,
+   "cannot_alarms": 78
+  },
+  "R-1": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 7231,
+   "alarms": 13,
+   "predicted": [
+    [
+     4459,
+     4671
+    ]
+   ],
+   "miss_alarms": 8,
+   "cannot_alarms": 5
+  },
+  "A-5": {
+   "profile": {
+    "worst_miss": 9,
+    "longest_cannot_run": 16,
+    "answered_share": 0.9162
+   },
+   "test_windows": 4680,
+   "alarms": 1476,
+   "predicted": [
+    [
+     0,
+     129
+    ],
+    [
+     246,
+     3103
+    ],
+    [
+     3277,
+     4692
+    ]
+   ],
+   "miss_alarms": 51,
+   "cannot_alarms": 1425
+  },
+  "A-6": {
+   "profile": {
+    "worst_miss": 3514,
+    "longest_cannot_run": 34,
+    "answered_share": 0.7205
+   },
+   "test_windows": 4440,
+   "alarms": 245,
+   "predicted": [
+    [
+     0,
+     755
+    ],
+    [
+     1797,
+     2001
+    ],
+    [
+     3051,
+     3267
+    ],
+    [
+     3680,
+     3886
+    ],
+    [
+     3904,
+     4448
+    ]
+   ],
+   "miss_alarms": 5,
+   "cannot_alarms": 240
+  },
+  "A-7": {
+   "profile": {
+    "worst_miss": 14448,
+    "longest_cannot_run": 8,
+    "answered_share": 0.8468
+   },
+   "test_windows": 8618,
+   "alarms": 2356,
+   "predicted": [
+    [
+     6166,
+     8630
+    ]
+   ],
+   "miss_alarms": 0,
+   "cannot_alarms": 2356
+  },
+  "D-13": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 7650,
+   "alarms": 29,
+   "predicted": [
+    [
+     4992,
+     5293
+    ]
+   ],
+   "miss_alarms": 21,
+   "cannot_alarms": 8
+  },
+  "A-8": {
+   "profile": {
+    "worst_miss": 19998,
+    "longest_cannot_run": 6,
+    "answered_share": 0.992
+   },
+   "test_windows": 8362,
+   "alarms": 514,
+   "predicted": [
+    [
+     304,
+     512
+    ],
+    [
+     646,
+     847
+    ],
+    [
+     962,
+     1163
+    ],
+    [
+     1231,
+     3285
+    ],
+    [
+     3599,
+     4172
+    ],
+    [
+     4263,
+     5831
+    ],
+    [
+     5876,
+     6567
+    ],
+    [
+     6738,
+     8374
+    ]
+   ],
+   "miss_alarms": 0,
+   "cannot_alarms": 514
+  },
+  "A-9": {
+   "profile": {
+    "worst_miss": 20000,
+    "longest_cannot_run": 21,
+    "answered_share": 0.757
+   },
+   "test_windows": 8421,
+   "alarms": 240,
+   "predicted": [
+    [
+     31,
+     233
+    ],
+    [
+     2225,
+     3015
+    ],
+    [
+     3210,
+     3745
+    ],
+    [
+     3775,
+     3978
+    ],
+    [
+     3999,
+     4199
+    ],
+    [
+     4247,
+     4715
+    ],
+    [
+     4865,
+     5280
+    ],
+    [
+     5414,
+     5896
+    ],
+    [
+     5903,
+     6114
+    ],
+    [
+     6386,
+     6587
+    ],
+    [
+     6935,
+     7304
+    ],
+    [
+     7478,
+     8433
+    ]
+   ],
+   "miss_alarms": 0,
+   "cannot_alarms": 240
+  },
+  "F-3": {
+   "profile": {
+    "worst_miss": 14,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 8363,
+   "alarms": 13,
+   "predicted": [
+    [
+     5511,
+     5723
+    ]
+   ],
+   "miss_alarms": 8,
+   "cannot_alarms": 5
+  },
+  "M-6": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 2036,
+   "alarms": 59,
+   "predicted": [
+    [
+     910,
+     1121
+    ],
+    [
+     1212,
+     1426
+    ],
+    [
+     1569,
+     1976
+    ]
+   ],
+   "miss_alarms": 49,
+   "cannot_alarms": 10
+  },
+  "M-1": {
+   "profile": {
+    "worst_miss": 19216,
+    "longest_cannot_run": 3,
+    "answered_share": 0.9504
+   },
+   "test_windows": 2264,
+   "alarms": 47,
+   "predicted": [
+    [
+     259,
+     1238
+    ]
+   ],
+   "miss_alarms": 47,
+   "cannot_alarms": 0
+  },
+  "M-2": {
+   "profile": {
+    "worst_miss": 16350,
+    "longest_cannot_run": 3,
+    "answered_share": 0.9399
+   },
+   "test_windows": 2264,
+   "alarms": 76,
+   "predicted": [
+    [
+     132,
+     333
+    ],
+    [
+     1050,
+     2276
+    ]
+   ],
+   "miss_alarms": 76,
+   "cannot_alarms": 0
+  },
+  "S-2": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 1814,
+   "alarms": 15,
+   "predicted": [
+    [
+     805,
+     1019
+    ]
+   ],
+   "miss_alarms": 9,
+   "cannot_alarms": 6
+  },
+  "P-10": {
+   "profile": {
+    "worst_miss": 113,
+    "longest_cannot_run": 1299,
+    "answered_share": 0.007
+   },
+   "test_windows": 6087,
+   "alarms": 126,
+   "predicted": [
+    [
+     4519,
+     6099
+    ]
+   ],
+   "miss_alarms": 126,
+   "cannot_alarms": 0
+  },
+  "T-4": {
+   "profile": {
+    "worst_miss": 16699,
+    "longest_cannot_run": 18,
+    "answered_share": 0.8318
+   },
+   "test_windows": 2204,
+   "alarms": 11,
+   "predicted": [
+    [
+     1055,
+     1316
+    ]
+   ],
+   "miss_alarms": 1,
+   "cannot_alarms": 10
+  },
+  "T-5": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 2205,
+   "alarms": 17,
+   "predicted": [
+    [
+     1112,
+     1328
+    ]
+   ],
+   "miss_alarms": 11,
+   "cannot_alarms": 6
+  },
+  "F-7": {
+   "profile": {
+    "worst_miss": 31332,
+    "longest_cannot_run": 54,
+    "answered_share": 0.2826
+   },
+   "test_windows": 5041,
+   "alarms": 69,
+   "predicted": [
+    [
+     1217,
+     1417
+    ],
+    [
+     1556,
+     1756
+    ],
+    [
+     2663,
+     2885
+    ],
+    [
+     3432,
+     3635
+    ],
+    [
+     4482,
+     4686
+    ],
+    [
+     4773,
+     5007
+    ]
+   ],
+   "miss_alarms": 2,
+   "cannot_alarms": 67
+  },
+  "M-3": {
+   "profile": {
+    "worst_miss": 21015,
+    "longest_cannot_run": 61,
+    "answered_share": 0.871
+   },
+   "test_windows": 2114,
+   "alarms": 0,
+   "predicted": [],
+   "miss_alarms": 0,
+   "cannot_alarms": 0
+  },
+  "M-4": {
+   "profile": {
+    "worst_miss": 19367,
+    "longest_cannot_run": 86,
+    "answered_share": 0.824
+   },
+   "test_windows": 2025,
+   "alarms": 0,
+   "predicted": [],
+   "miss_alarms": 0,
+   "cannot_alarms": 0
+  },
+  "M-5": {
+   "profile": {
+    "worst_miss": 31150,
+    "longest_cannot_run": 24,
+    "answered_share": 0.8148
+   },
+   "test_windows": 2290,
+   "alarms": 0,
+   "predicted": [],
+   "miss_alarms": 0,
+   "cannot_alarms": 0
+  },
+  "P-15": {
+   "profile": {
+    "worst_miss": 2331,
+    "longest_cannot_run": 147,
+    "answered_share": 0.2788
+   },
+   "test_windows": 2843,
+   "alarms": 2,
+   "predicted": [
+    [
+     1299,
+     1500
+    ]
+   ],
+   "miss_alarms": 2,
+   "cannot_alarms": 0
+  },
+  "C-1": {
+   "profile": {
+    "worst_miss": 18875,
+    "longest_cannot_run": 16,
+    "answered_share": 0.8452
+   },
+   "test_windows": 2251,
+   "alarms": 28,
+   "predicted": [
+    [
+     283,
+     651
+    ],
+    [
+     1772,
+     1975
+    ]
+   ],
+   "miss_alarms": 2,
+   "cannot_alarms": 26
+  },
+  "C-2": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 2038,
+   "alarms": 1734,
+   "predicted": [
+    [
+     108,
+     2043
+    ]
+   ],
+   "miss_alarms": 1604,
+   "cannot_alarms": 130
+  },
+  "T-12": {
+   "profile": {
+    "worst_miss": 20012,
+    "longest_cannot_run": 2,
+    "answered_share": 0.9885
+   },
+   "test_windows": 2417,
+   "alarms": 0,
+   "predicted": [],
+   "miss_alarms": 0,
+   "cannot_alarms": 0
+  },
+  "T-13": {
+   "profile": {
+    "worst_miss": 2508,
+    "longest_cannot_run": 2,
+    "answered_share": 0.9876
+   },
+   "test_windows": 2417,
+   "alarms": 0,
+   "predicted": [],
+   "miss_alarms": 0,
+   "cannot_alarms": 0
+  },
+  "F-4": {
+   "profile": {
+    "worst_miss": 17443,
+    "longest_cannot_run": 31,
+    "answered_share": 0.8445
+   },
+   "test_windows": 3409,
+   "alarms": 12,
+   "predicted": [
+    [
+     383,
+     584
+    ],
+    [
+     1301,
+     1502
+    ],
+    [
+     2026,
+     2227
+    ],
+    [
+     2455,
+     2857
+    ],
+    [
+     2931,
+     3132
+    ]
+   ],
+   "miss_alarms": 12,
+   "cannot_alarms": 0
+  },
+  "F-5": {
+   "profile": {
+    "worst_miss": 52815,
+    "longest_cannot_run": 7,
+    "answered_share": 0.947
+   },
+   "test_windows": 3909,
+   "alarms": 4,
+   "predicted": [
+    [
+     758,
+     958
+    ],
+    [
+     2379,
+     2579
+    ],
+    [
+     3561,
+     3762
+    ]
+   ],
+   "miss_alarms": 2,
+   "cannot_alarms": 2
+  },
+  "D-14": {
+   "profile": {
+    "worst_miss": 0,
+    "longest_cannot_run": 0,
+    "answered_share": 1.0
+   },
+   "test_windows": 2612,
+   "alarms": 47,
+   "predicted": [
+    [
+     1534,
+     2101
+    ]
+   ],
+   "miss_alarms": 41,
+   "cannot_alarms": 6
+  },
+  "T-9": {
+   "profile": {
+    "worst_miss": 11145,
+    "longest_cannot_run": 36,
+    "answered_share": 0.8709
+   },
+   "test_windows": 1083,
+   "alarms": 110,
+   "predicted": [
+    [
+     54,
+     650
+    ],
+    [
+     691,
+     1095
+    ]
+   ],
+   "miss_alarms": 15,
+   "cannot_alarms": 95
+  },
+  "P-14": {
+   "profile": {
+    "worst_miss": 3,
+    "longest_cannot_run": 556,
+    "answered_share": 0.0066
+   },
+   "test_windows": 6087,
+   "alarms": 483,
+   "predicted": [
+    [
+     1,
+     545
+    ],
+    [
+     645,
+     845
+    ],
+    [
+     870,
+     1248
+    ],
+    [
+     1254,
+     1454
+    ],
+    [
+     1521,
+     1755
+    ],
+    [
+     1994,
+     2323
+    ],
+    [
+     2355,
+     2561
+    ],
+    [
+     2665,
+     2865
+    ],
+    [
+     2971,
+     3353
+    ],
+    [
+     3416,
+     6099
+    ]
+   ],
+   "miss_alarms": 483,
+   "cannot_alarms": 0
+  },
+  "T-8": {
+   "profile": {
+    "worst_miss": 33924,
+    "longest_cannot_run": 3,
+    "answered_share": 0.9429
+   },
+   "test_windows": 1506,
+   "alarms": 22,
+   "predicted": [
+    [
+     63,
+     346
+    ],
+    [
+     1275,
+     1518
+    ]
+   ],
+   "miss_alarms": 0,
+   "cannot_alarms": 22
+  },
+  "P-11": {
+   "profile": {
+    "worst_miss": 5187,
+    "longest_cannot_run": 72,
+    "answered_share": 0.2662
+   },
+   "test_windows": 3522,
+   "alarms": 19,
+   "predicted": [
+    [
+     223,
+     427
+    ],
+    [
+     1141,
+     1342
+    ],
+    [
+     1752,
+     1953
+    ],
+    [
+     3164,
+     3373
+    ]
+   ],
+   "miss_alarms": 4,
+   "cannot_alarms": 15
+  },
+  "D-15": {
+   "profile": {
+    "worst_miss": 36500,
+    "longest_cannot_run": 59,
+    "answered_share": 0.6143
+   },
+   "test_windows": 2145,
+   "alarms": 18,
+   "predicted": [
+    [
+     1580,
+     2157
+    ]
+   ],
+   "miss_alarms": 16,
+   "cannot_alarms": 2
+  },
+  "D-16": {
+   "profile": {
+    "worst_miss": 33599,
+    "longest_cannot_run": 103,
+    "answered_share": 0.6683
+   },
+   "test_windows": 2178,
+   "alarms": 55,
+   "predicted": [
+    [
+     1824,
+     2190
+    ]
+   ],
+   "miss_alarms": 0,
+   "cannot_alarms": 55
+  },
+  "M-7": {
+   "profile": {
+    "worst_miss": 23323,
+    "longest_cannot_run": 17,
+    "answered_share": 0.953
+   },
+   "test_windows": 2143,
+   "alarms": 0,
+   "predicted": [],
+   "miss_alarms": 0,
+   "cannot_alarms": 0
+  },
+  "F-8": {
+   "profile": {
+    "worst_miss": 32705,
+    "longest_cannot_run": 157,
+    "answered_share": 0.3262
+   },
+   "test_windows": 2474,
+   "alarms": 5,
+   "predicted": [
+    [
+     0,
+     120
+    ],
+    [
+     195,
+     468
+    ]
+   ],
+   "miss_alarms": 5,
+   "cannot_alarms": 0
+  }
+ },
+ "rows": [
+  {
+   "row": 0,
+   "chan": "P-1",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     2149,
+     2349
+    ],
+    [
+     4536,
+     4844
+    ],
+    [
+     3539,
+     3779
+    ]
+   ],
+   "found": [],
+   "tp": 0,
+   "fp": 3,
+   "fn": 3
+  },
+  {
+   "row": 1,
+   "chan": "S-1",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5300,
+     5747
+    ]
+   ],
+   "found": [
+    [
+     5300,
+     5747
+    ]
+   ],
+   "tp": 1,
+   "fp": 3,
+   "fn": 0
+  },
+  {
+   "row": 2,
+   "chan": "E-1",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5000,
+     5030
+    ],
+    [
+     5610,
+     6086
+    ]
+   ],
+   "found": [
+    [
+     5610,
+     6086
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 1
+  },
+  {
+   "row": 3,
+   "chan": "E-2",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5598,
+     6995
+    ]
+   ],
+   "found": [
+    [
+     5598,
+     6995
+    ]
+   ],
+   "tp": 1,
+   "fp": 1,
+   "fn": 0
+  },
+  {
+   "row": 4,
+   "chan": "E-3",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5094,
+     8306
+    ]
+   ],
+   "found": [
+    [
+     5094,
+     8306
+    ]
+   ],
+   "tp": 1,
+   "fp": 9,
+   "fn": 0
+  },
+  {
+   "row": 5,
+   "chan": "E-4",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5450,
+     8261
+    ]
+   ],
+   "found": [
+    [
+     5450,
+     8261
+    ]
+   ],
+   "tp": 1,
+   "fp": 1,
+   "fn": 0
+  },
+  {
+   "row": 6,
+   "chan": "E-5",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5600,
+     5920
+    ]
+   ],
+   "found": [
+    [
+     5600,
+     5920
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 7,
+   "chan": "E-6",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5610,
+     5675
+    ]
+   ],
+   "found": [
+    [
+     5610,
+     5675
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 8,
+   "chan": "E-7",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5394,
+     5674
+    ]
+   ],
+   "found": [
+    [
+     5394,
+     5674
+    ]
+   ],
+   "tp": 1,
+   "fp": 2,
+   "fn": 0
+  },
+  {
+   "row": 9,
+   "chan": "E-8",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5400,
+     6022
+    ]
+   ],
+   "found": [
+    [
+     5400,
+     6022
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 10,
+   "chan": "E-9",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5550,
+     5900
+    ]
+   ],
+   "found": [
+    [
+     5550,
+     5900
+    ]
+   ],
+   "tp": 1,
+   "fp": 2,
+   "fn": 0
+  },
+  {
+   "row": 11,
+   "chan": "E-10",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5000,
+     5050
+    ],
+    [
+     5601,
+     5871
+    ]
+   ],
+   "found": [
+    [
+     5000,
+     5050
+    ],
+    [
+     5601,
+     5871
+    ]
+   ],
+   "tp": 2,
+   "fp": 2,
+   "fn": 0
+  },
+  {
+   "row": 12,
+   "chan": "E-11",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5000,
+     5050
+    ],
+    [
+     5614,
+     5857
+    ]
+   ],
+   "found": [
+    [
+     5614,
+     5857
+    ]
+   ],
+   "tp": 1,
+   "fp": 4,
+   "fn": 1
+  },
+  {
+   "row": 13,
+   "chan": "E-12",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5610,
+     6141
+    ],
+    [
+     5000,
+     5050
+    ]
+   ],
+   "found": [
+    [
+     5610,
+     6141
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 1
+  },
+  {
+   "row": 14,
+   "chan": "E-13",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5309,
+     5410
+    ],
+    [
+     5600,
+     5640
+    ],
+    [
+     6449,
+     6569
+    ]
+   ],
+   "found": [
+    [
+     5309,
+     5410
+    ],
+    [
+     5600,
+     5640
+    ],
+    [
+     6449,
+     6569
+    ]
+   ],
+   "tp": 3,
+   "fp": 7,
+   "fn": 0
+  },
+  {
+   "row": 15,
+   "chan": "A-1",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4690,
+     4774
+    ]
+   ],
+   "found": [
+    [
+     4690,
+     4774
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 16,
+   "chan": "D-1",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5250,
+     8508
+    ]
+   ],
+   "found": [
+    [
+     5250,
+     8508
+    ]
+   ],
+   "tp": 1,
+   "fp": 1,
+   "fn": 0
+  },
+  {
+   "row": 17,
+   "chan": "P-2",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5350,
+     6575
+    ]
+   ],
+   "found": [
+    [
+     5350,
+     6575
+    ]
+   ],
+   "tp": 1,
+   "fp": 7,
+   "fn": 0
+  },
+  {
+   "row": 18,
+   "chan": "P-3",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5401,
+     6736
+    ]
+   ],
+   "found": [
+    [
+     5401,
+     6736
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 19,
+   "chan": "D-2",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4319,
+     8536
+    ]
+   ],
+   "found": [
+    [
+     4319,
+     8536
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 20,
+   "chan": "D-3",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5225,
+     8500
+    ]
+   ],
+   "found": [
+    [
+     5225,
+     8500
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 21,
+   "chan": "D-4",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5225,
+     8472
+    ]
+   ],
+   "found": [
+    [
+     5225,
+     8472
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 22,
+   "chan": "A-2",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4450,
+     4560
+    ]
+   ],
+   "found": [
+    [
+     4450,
+     4560
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 23,
+   "chan": "A-3",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4575,
+     4760
+    ]
+   ],
+   "found": [
+    [
+     4575,
+     4760
+    ]
+   ],
+   "tp": 1,
+   "fp": 1,
+   "fn": 0
+  },
+  {
+   "row": 24,
+   "chan": "A-4",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4550,
+     4660
+    ]
+   ],
+   "found": [],
+   "tp": 0,
+   "fp": 4,
+   "fn": 1
+  },
+  {
+   "row": 25,
+   "chan": "G-1",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4770,
+     4890
+    ]
+   ],
+   "found": [],
+   "tp": 0,
+   "fp": 1,
+   "fn": 1
+  },
+  {
+   "row": 26,
+   "chan": "G-2",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4030,
+     4070
+    ]
+   ],
+   "found": [
+    [
+     4030,
+     4070
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 27,
+   "chan": "D-5",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4800,
+     4850
+    ]
+   ],
+   "found": [
+    [
+     4800,
+     4850
+    ]
+   ],
+   "tp": 1,
+   "fp": 22,
+   "fn": 0
+  },
+  {
+   "row": 28,
+   "chan": "D-6",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4870,
+     4950
+    ]
+   ],
+   "found": [
+    [
+     4870,
+     4950
+    ]
+   ],
+   "tp": 1,
+   "fp": 1,
+   "fn": 0
+  },
+  {
+   "row": 29,
+   "chan": "D-7",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4940,
+     7641
+    ]
+   ],
+   "found": [
+    [
+     4940,
+     7641
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 30,
+   "chan": "F-1",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5392,
+     5492
+    ]
+   ],
+   "found": [],
+   "tp": 0,
+   "fp": 1,
+   "fn": 1
+  },
+  {
+   "row": 31,
+   "chan": "P-4",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     950,
+     1080
+    ],
+    [
+     2150,
+     2350
+    ],
+    [
+     4770,
+     4880
+    ]
+   ],
+   "found": [
+    [
+     950,
+     1080
+    ],
+    [
+     2150,
+     2350
+    ],
+    [
+     4770,
+     4880
+    ]
+   ],
+   "tp": 3,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 32,
+   "chan": "G-3",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4200,
+     4250
+    ]
+   ],
+   "found": [
+    [
+     4200,
+     4250
+    ]
+   ],
+   "tp": 1,
+   "fp": 1,
+   "fn": 0
+  },
+  {
+   "row": 33,
+   "chan": "T-1",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     2399,
+     3898
+    ],
+    [
+     6550,
+     6585
+    ]
+   ],
+   "found": [
+    [
+     6550,
+     6585
+    ]
+   ],
+   "tp": 1,
+   "fp": 3,
+   "fn": 1
+  },
+  {
+   "row": 34,
+   "chan": "T-2",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     6840,
+     8624
+    ]
+   ],
+   "found": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 1
+  },
+  {
+   "row": 35,
+   "chan": "D-8",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4370,
+     4420
+    ]
+   ],
+   "found": [
+    [
+     4370,
+     4420
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 36,
+   "chan": "D-9",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     6250,
+     7405
+    ]
+   ],
+   "found": [
+    [
+     6250,
+     7405
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 37,
+   "chan": "F-2",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5669,
+     8625
+    ]
+   ],
+   "found": [
+    [
+     5669,
+     8625
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 38,
+   "chan": "G-4",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4690,
+     4720
+    ]
+   ],
+   "found": [
+    [
+     4690,
+     4720
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 39,
+   "chan": "T-3",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     2098,
+     2180
+    ],
+    [
+     5200,
+     5300
+    ]
+   ],
+   "found": [
+    [
+     2098,
+     2180
+    ],
+    [
+     5200,
+     5300
+    ]
+   ],
+   "tp": 2,
+   "fp": 4,
+   "fn": 0
+  },
+  {
+   "row": 40,
+   "chan": "D-11",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4270,
+     4330
+    ]
+   ],
+   "found": [
+    [
+     4270,
+     4330
+    ]
+   ],
+   "tp": 1,
+   "fp": 3,
+   "fn": 0
+  },
+  {
+   "row": 41,
+   "chan": "D-12",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5178,
+     7917
+    ]
+   ],
+   "found": [
+    [
+     5178,
+     7917
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 42,
+   "chan": "B-1",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5060,
+     5130
+    ]
+   ],
+   "found": [
+    [
+     5060,
+     5130
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 43,
+   "chan": "G-6",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5600,
+     5700
+    ]
+   ],
+   "found": [
+    [
+     5600,
+     5700
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 44,
+   "chan": "G-7",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     3650,
+     3750
+    ],
+    [
+     5050,
+     5100
+    ],
+    [
+     7560,
+     7675
+    ]
+   ],
+   "found": [
+    [
+     3650,
+     3750
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 2
+  },
+  {
+   "row": 45,
+   "chan": "P-7",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4950,
+     6600
+    ]
+   ],
+   "found": [
+    [
+     4950,
+     6600
+    ]
+   ],
+   "tp": 1,
+   "fp": 4,
+   "fn": 0
+  },
+  {
+   "row": 46,
+   "chan": "R-1",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4510,
+     4590
+    ]
+   ],
+   "found": [
+    [
+     4510,
+     4590
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 47,
+   "chan": "A-5",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     2750,
+     2800
+    ]
+   ],
+   "found": [
+    [
+     2750,
+     2800
+    ]
+   ],
+   "tp": 1,
+   "fp": 2,
+   "fn": 0
+  },
+  {
+   "row": 48,
+   "chan": "A-6",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     1890,
+     1930
+    ]
+   ],
+   "found": [
+    [
+     1890,
+     1930
+    ]
+   ],
+   "tp": 1,
+   "fp": 4,
+   "fn": 0
+  },
+  {
+   "row": 49,
+   "chan": "A-7",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     6200,
+     8600
+    ]
+   ],
+   "found": [
+    [
+     6200,
+     8600
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 50,
+   "chan": "D-13",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5070,
+     5230
+    ]
+   ],
+   "found": [
+    [
+     5070,
+     5230
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 51,
+   "chan": "P-2",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5300,
+     6420
+    ]
+   ],
+   "found": [
+    [
+     5300,
+     6420
+    ]
+   ],
+   "tp": 1,
+   "fp": 7,
+   "fn": 0
+  },
+  {
+   "row": 52,
+   "chan": "A-8",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4569,
+     8374
+    ]
+   ],
+   "found": [
+    [
+     4569,
+     8374
+    ]
+   ],
+   "tp": 1,
+   "fp": 5,
+   "fn": 0
+  },
+  {
+   "row": 53,
+   "chan": "A-9",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     4569,
+     8433
+    ]
+   ],
+   "found": [
+    [
+     4569,
+     8433
+    ]
+   ],
+   "tp": 1,
+   "fp": 5,
+   "fn": 0
+  },
+  {
+   "row": 54,
+   "chan": "F-3",
+   "spacecraft": "SMAP",
+   "labelled": [
+    [
+     5600,
+     5640
+    ]
+   ],
+   "found": [
+    [
+     5600,
+     5640
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 55,
+   "chan": "M-6",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1850,
+     2030
+    ]
+   ],
+   "found": [
+    [
+     1850,
+     2030
+    ]
+   ],
+   "tp": 1,
+   "fp": 2,
+   "fn": 0
+  },
+  {
+   "row": 56,
+   "chan": "M-1",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1110,
+     2250
+    ]
+   ],
+   "found": [
+    [
+     1110,
+     2250
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 57,
+   "chan": "M-2",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1110,
+     2250
+    ]
+   ],
+   "found": [
+    [
+     1110,
+     2250
+    ]
+   ],
+   "tp": 1,
+   "fp": 1,
+   "fn": 0
+  },
+  {
+   "row": 58,
+   "chan": "S-2",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     900,
+     910
+    ]
+   ],
+   "found": [
+    [
+     900,
+     910
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 59,
+   "chan": "P-10",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     4590,
+     4720
+    ]
+   ],
+   "found": [
+    [
+     4590,
+     4720
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 60,
+   "chan": "T-4",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1172,
+     1240
+    ]
+   ],
+   "found": [
+    [
+     1172,
+     1240
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 61,
+   "chan": "T-5",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1200,
+     1225
+    ]
+   ],
+   "found": [
+    [
+     1200,
+     1225
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 62,
+   "chan": "F-7",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1250,
+     1450
+    ],
+    [
+     2670,
+     2790
+    ],
+    [
+     3325,
+     3425
+    ]
+   ],
+   "found": [
+    [
+     1250,
+     1450
+    ],
+    [
+     2670,
+     2790
+    ]
+   ],
+   "tp": 2,
+   "fp": 4,
+   "fn": 1
+  },
+  {
+   "row": 63,
+   "chan": "M-3",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1250,
+     1500
+    ]
+   ],
+   "found": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 1
+  },
+  {
+   "row": 64,
+   "chan": "M-4",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1250,
+     1500
+    ]
+   ],
+   "found": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 1
+  },
+  {
+   "row": 65,
+   "chan": "M-5",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1250,
+     1550
+    ]
+   ],
+   "found": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 1
+  },
+  {
+   "row": 66,
+   "chan": "P-15",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1390,
+     1410
+    ]
+   ],
+   "found": [
+    [
+     1390,
+     1410
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 67,
+   "chan": "C-1",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     550,
+     750
+    ],
+    [
+     2100,
+     2210
+    ]
+   ],
+   "found": [
+    [
+     550,
+     750
+    ]
+   ],
+   "tp": 1,
+   "fp": 1,
+   "fn": 1
+  },
+  {
+   "row": 68,
+   "chan": "C-2",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     290,
+     390
+    ],
+    [
+     1540,
+     1575
+    ]
+   ],
+   "found": [
+    [
+     290,
+     390
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 1
+  },
+  {
+   "row": 69,
+   "chan": "T-12",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     630,
+     750
+    ]
+   ],
+   "found": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 1
+  },
+  {
+   "row": 70,
+   "chan": "T-13",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     690,
+     790
+    ],
+    [
+     1900,
+     2050
+    ]
+   ],
+   "found": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 2
+  },
+  {
+   "row": 71,
+   "chan": "F-4",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     2700,
+     2770
+    ]
+   ],
+   "found": [
+    [
+     2700,
+     2770
+    ]
+   ],
+   "tp": 1,
+   "fp": 4,
+   "fn": 0
+  },
+  {
+   "row": 72,
+   "chan": "F-5",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     3550,
+     3700
+    ]
+   ],
+   "found": [
+    [
+     3550,
+     3700
+    ]
+   ],
+   "tp": 1,
+   "fp": 2,
+   "fn": 0
+  },
+  {
+   "row": 73,
+   "chan": "D-14",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1630,
+     1650
+    ],
+    [
+     1800,
+     2000
+    ]
+   ],
+   "found": [
+    [
+     1630,
+     1650
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 1
+  },
+  {
+   "row": 74,
+   "chan": "T-9",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     780,
+     810
+    ],
+    [
+     890,
+     970
+    ]
+   ],
+   "found": [
+    [
+     780,
+     810
+    ]
+   ],
+   "tp": 1,
+   "fp": 1,
+   "fn": 1
+  },
+  {
+   "row": 75,
+   "chan": "P-14",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     4575,
+     4755
+    ]
+   ],
+   "found": [
+    [
+     4575,
+     4755
+    ]
+   ],
+   "tp": 1,
+   "fp": 9,
+   "fn": 0
+  },
+  {
+   "row": 76,
+   "chan": "T-8",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     870,
+     930
+    ],
+    [
+     1330,
+     1370
+    ]
+   ],
+   "found": [
+    [
+     1330,
+     1370
+    ]
+   ],
+   "tp": 1,
+   "fp": 1,
+   "fn": 1
+  },
+  {
+   "row": 77,
+   "chan": "P-11",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1778,
+     1898
+    ],
+    [
+     1238,
+     1344
+    ]
+   ],
+   "found": [
+    [
+     1238,
+     1344
+    ],
+    [
+     1778,
+     1898
+    ]
+   ],
+   "tp": 2,
+   "fp": 2,
+   "fn": 0
+  },
+  {
+   "row": 78,
+   "chan": "D-15",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1500,
+     2140
+    ]
+   ],
+   "found": [
+    [
+     1500,
+     2140
+    ]
+   ],
+   "tp": 1,
+   "fp": 0,
+   "fn": 0
+  },
+  {
+   "row": 79,
+   "chan": "D-16",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     600,
+     1250
+    ]
+   ],
+   "found": [],
+   "tp": 0,
+   "fp": 1,
+   "fn": 1
+  },
+  {
+   "row": 80,
+   "chan": "M-7",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     940,
+     1040
+    ]
+   ],
+   "found": [],
+   "tp": 0,
+   "fp": 0,
+   "fn": 1
+  },
+  {
+   "row": 81,
+   "chan": "F-8",
+   "spacecraft": "MSL",
+   "labelled": [
+    [
+     1950,
+     2486
+    ]
+   ],
+   "found": [],
+   "tp": 0,
+   "fp": 2,
+   "fn": 1
+  }
+ ]
+}

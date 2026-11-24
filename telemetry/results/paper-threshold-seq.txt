@@ -1,0 +1,4 @@
+the paper's thresholding on the brain's forecasts:
+  SMAP   TP  40 FP  11 FN  29  precision  78.4%  recall  58.0%  F0.5 0.733
+  MSL    TP  18 FP   1 FN  18  precision  94.7%  recall  50.0%  F0.5 0.804
+  Total  TP  58 FP  12 FN  47  precision  82.9%  recall  55.2%  F0.5 0.753

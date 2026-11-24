@@ -1,0 +1,12 @@
+SMAP/train   137302 windows  CANNOT 23.6%  AM 0.4%  SPLITTER 0.0%  NET 76.0%
+            answered 76.4%, miss median 0.0 p90 0.0994; exact 504 (miss 0 in 0.9742), AM on 7 of 54 channels
+SMAP/test    435124 windows  CANNOT 24.5%  AM 0.6%  SPLITTER 0.0%  NET 74.9%
+            answered 75.5%, miss median 0.0 p90 0.0686; exact 2565 (miss 0 in 0.9918), AM on 13 of 54 channels
+MSL/train     57966 windows  CANNOT 31.8%  AM 0.8%  NET 67.3%
+            answered 68.2%, miss median 0.0001 p90 0.09545; exact 479 (miss 0 in 0.9729), AM on 3 of 27 channels
+MSL/test      73378 windows  CANNOT 33.3%  AM 0.4%  NET 66.3%
+            answered 66.7%, miss median 0.0008 p90 0.1086; exact 296 (miss 0 in 0.9797), AM on 2 of 27 channels
+both/train   195268 windows  CANNOT 26.0%  AM 0.5%  SPLITTER 0.0%  NET 73.5%
+            answered 74.0%, miss median 0.0 p90 0.0987; exact 983 (miss 0 in 0.9736), AM on 10 of 81 channels
+both/test    508502 windows  CANNOT 25.8%  AM 0.6%  SPLITTER 0.0%  NET 73.6%
+            answered 74.2%, miss median 0.0 p90 0.0723; exact 2861 (miss 0 in 0.9906), AM on 15 of 81 channels

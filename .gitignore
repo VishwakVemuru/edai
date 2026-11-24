@@ -9,3 +9,7 @@ sensors/sensor_run
 sensors/hidtemp
 sensors/phone/.cert/
 sensors/my-lab.json
+telemetry/data/
+telemetry/out/
+telemetry/nasa_run
+__pycache__/

@@ -1,0 +1,202 @@
+{
+ "grid": 140,
+ "best_on_smap": {
+  "floor": 0.005,
+  "margin": 2,
+  "cannot": 0
+ },
+ "SMAP_tuned_on": {
+  "tp": 34,
+  "fp": 1,
+  "fn": 35,
+  "precision": 0.9714,
+  "recall": 0.4928,
+  "f05": 0.8134
+ },
+ "MSL_held_out": {
+  "tp": 10,
+  "fp": 3,
+  "fn": 26,
+  "precision": 0.7692,
+  "recall": 0.2778,
+  "f05": 0.5682
+ },
+ "Total": {
+  "tp": 44,
+  "fp": 4,
+  "fn": 61,
+  "precision": 0.9167,
+  "recall": 0.419,
+  "f05": 0.7407
+ },
+ "protocol_setting_for_reference": {
+  "SMAP": {
+   "tp": 56,
+   "fp": 110,
+   "fn": 13,
+   "precision": 0.3373,
+   "recall": 0.8116,
+   "f05": 0.382
+  },
+  "MSL": {
+   "tp": 21,
+   "fp": 30,
+   "fn": 15,
+   "precision": 0.4118,
+   "recall": 0.5833,
+   "f05": 0.4375
+  }
+ },
+ "top10_on_smap": [
+  {
+   "setting": {
+    "floor": 0.005,
+    "margin": 2,
+    "cannot": 0
+   },
+   "smap": {
+    "tp": 34,
+    "fp": 1,
+    "fn": 35,
+    "precision": 0.9714,
+    "recall": 0.4928,
+    "f05": 0.8134
+   }
+  },
+  {
+   "setting": {
+    "floor": 0.02,
+    "margin": 1.5,
+    "cannot": 0
+   },
+   "smap": {
+    "tp": 32,
+    "fp": 0,
+    "fn": 37,
+    "precision": 1.0,
+    "recall": 0.4638,
+    "f05": 0.8122
+   }
+  },
+  {
+   "setting": {
+    "floor": 0.05,
+    "margin": 1.5,
+    "cannot": 0
+   },
+   "smap": {
+    "tp": 32,
+    "fp": 0,
+    "fn": 37,
+    "precision": 1.0,
+    "recall": 0.4638,
+    "f05": 0.8122
+   }
+  },
+  {
+   "setting": {
+    "floor": 0.1,
+    "margin": 1.5,
+    "cannot": 0
+   },
+   "smap": {
+    "tp": 32,
+    "fp": 0,
+    "fn": 37,
+    "precision": 1.0,
+    "recall": 0.4638,
+    "f05": 0.8122
+   }
+  },
+  {
+   "setting": {
+    "floor": 0.005,
+    "margin": 1.5,
+    "cannot": 0
+   },
+   "smap": {
+    "tp": 35,
+    "fp": 2,
+    "fn": 34,
+    "precision": 0.9459,
+    "recall": 0.5072,
+    "f05": 0.8065
+   }
+  },
+  {
+   "setting": {
+    "floor": 0.01,
+    "margin": 1.5,
+    "cannot": 0
+   },
+   "smap": {
+    "tp": 33,
+    "fp": 1,
+    "fn": 36,
+    "precision": 0.9706,
+    "recall": 0.4783,
+    "f05": 0.8049
+   }
+  },
+  {
+   "setting": {
+    "floor": 0.02,
+    "margin": 2,
+    "cannot": 0
+   },
+   "smap": {
+    "tp": 31,
+    "fp": 0,
+    "fn": 38,
+    "precision": 1.0,
+    "recall": 0.4493,
+    "f05": 0.8031
+   }
+  },
+  {
+   "setting": {
+    "floor": 0.05,
+    "margin": 2,
+    "cannot": 0
+   },
+   "smap": {
+    "tp": 31,
+    "fp": 0,
+    "fn": 38,
+    "precision": 1.0,
+    "recall": 0.4493,
+    "f05": 0.8031
+   }
+  },
+  {
+   "setting": {
+    "floor": 0.1,
+    "margin": 2,
+    "cannot": 0
+   },
+   "smap": {
+    "tp": 31,
+    "fp": 0,
+    "fn": 38,
+    "precision": 1.0,
+    "recall": 0.4493,
+    "f05": 0.8031
+   }
+  },
+  {
+   "setting": {
+    "floor": 0.01,
+    "margin": 2,
+    "cannot": 0
+   },
+   "smap": {
+    "tp": 32,
+    "fp": 1,
+    "fn": 37,
+    "precision": 0.9697,
+    "recall": 0.4638,
+    "f05": 0.796
+   }
+  }
+ ]
+}

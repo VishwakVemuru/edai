@@ -1,0 +1,136 @@
+{
+ "SMAP/train": {
+  "channels": 54,
+  "windows": 137302,
+  "share": {
+   "CANNOT": 0.2358,
+   "AM": 0.0035,
+   "SPLITTER": 0.0002,
+   "NET": 0.7605
+  },
+  "count": {
+   "CANNOT": 32382,
+   "AM": 483,
+   "SPLITTER": 21,
+   "NET": 104416
+  },
+  "answered_share": 0.7642,
+  "miss_median": 0.0,
+  "miss_p90": 0.0994,
+  "exact_windows": 504,
+  "exact_miss_zero_share": 0.9742,
+  "exact_miss_p90": 0.0,
+  "channels_with_am": 7
+ },
+ "SMAP/test": {
+  "channels": 54,
+  "windows": 435124,
+  "share": {
+   "CANNOT": 0.2454,
+   "AM": 0.0058,
+   "SPLITTER": 0.0001,
+   "NET": 0.7487
+  },
+  "count": {
+   "CANNOT": 106778,
+   "AM": 2543,
+   "SPLITTER": 22,
+   "NET": 325781
+  },
+  "answered_share": 0.7546,
+  "miss_median": 0.0,
+  "miss_p90": 0.0686,
+  "exact_windows": 2565,
+  "exact_miss_zero_share": 0.9918,
+  "exact_miss_p90": 0.0,
+  "channels_with_am": 13
+ },
+ "MSL/train": {
+  "channels": 27,
+  "windows": 57966,
+  "share": {
+   "CANNOT": 0.3183,
+   "AM": 0.0083,
+   "NET": 0.6734
+  },
+  "count": {
+   "CANNOT": 18450,
+   "AM": 479,
+   "NET": 39037
+  },
+  "answered_share": 0.6817,
+  "miss_median": 0.0001,
+  "miss_p90": 0.09545,
+  "exact_windows": 479,
+  "exact_miss_zero_share": 0.9729,
+  "exact_miss_p90": 0.0,
+  "channels_with_am": 3
+ },
+ "MSL/test": {
+  "channels": 27,
+  "windows": 73378,
+  "share": {
+   "CANNOT": 0.333,
+   "AM": 0.004,
+   "NET": 0.663
+  },
+  "count": {
+   "CANNOT": 24436,
+   "AM": 296,
+   "NET": 48646
+  },
+  "answered_share": 0.667,
+  "miss_median": 0.0008,
+  "miss_p90": 0.1086,
+  "exact_windows": 296,
+  "exact_miss_zero_share": 0.9797,
+  "exact_miss_p90": 0.0,
+  "channels_with_am": 2
+ },
+ "both/train": {
+  "channels": 81,
+  "windows": 195268,
+  "share": {
+   "CANNOT": 0.2603,
+   "AM": 0.0049,
+   "SPLITTER": 0.0001,
+   "NET": 0.7346
+  },
+  "count": {
+   "CANNOT": 50832,
+   "AM": 962,
+   "SPLITTER": 21,
+   "NET": 143453
+  },
+  "answered_share": 0.7397,
+  "miss_median": 0.0,
+  "miss_p90": 0.0987,
+  "exact_windows": 983,
+  "exact_miss_zero_share": 0.9736,
+  "exact_miss_p90": 0.0,
+  "channels_with_am": 10
+ },
+ "both/test": {
+  "channels": 81,
+  "windows": 508502,
+  "share": {
+   "CANNOT": 0.258,
+   "AM": 0.0056,
+   "SPLITTER": 0.0,
+   "NET": 0.7363
+  },
+  "count": {
+   "CANNOT": 131214,
+   "AM": 2839,
+   "SPLITTER": 22,
+   "NET": 374427
+  },
+  "answered_share": 0.742,
+  "miss_median": 0.0,
+  "miss_p90": 0.0723,
+  "exact_windows": 2861,
+  "exact_miss_zero_share": 0.9906,
+  "exact_miss_p90": 0.0,
+  "channels_with_am": 15
+ }
+}

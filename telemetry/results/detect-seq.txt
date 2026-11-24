@@ -1,0 +1,5 @@
+brain detector on out/seq:
+           TP   FP   FN precision  recall   F0.5
+  SMAP     56  110   13     33.7%   81.2%  0.382
+  MSL      21   30   15     41.2%   58.3%  0.438
+  Total    77  140   28     35.5%   73.3%  0.396
