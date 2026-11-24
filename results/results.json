@@ -144,6 +144,36 @@
   "date": "2026-11-23"
  },
  {
+  "device": "Raspberry Pi Pico (RP2040, Cortex-M0+, 125 MHz, no floating-point unit), a real board",
+  "how": "runners/pico, all 300 (version 1.1's edai-original-pico.uf2, commit e75b0a3)",
+  "version": "1.1",
+  "score": 274,
+  "rules": 96,
+  "trends": 119,
+  "noise": 59,
+  "same_lines_as_reference": 300,
+  "who_answered": {
+   "AM": 77,
+   "SPLITTER": 29,
+   "NET": 128,
+   "CANNOT": 66
+  },
+  "board_seconds": 12402.0,
+  "median_seconds": {
+   "AM": 2.9,
+   "SPLITTER": 14.6,
+   "NET": 69.7,
+   "CANNOT": 58.6
+  },
+  "stack_used_bytes": 2888,
+  "stack_bound_bytes": 2984,
+  "brain_bytes": 5216,
+  "log": "results/pico/real-pico-run.txt",
+  "check": "results/pico/real-pico-check.txt",
+  "reference": "results/expected-1.1.txt",
+  "date": "2026-11-23"
+ },
+ {
   "device": "Mac, Apple silicon",
   "how": "runners/computer (native library macos-arm64)",
   "score": 275,

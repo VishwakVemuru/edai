@@ -3,8 +3,10 @@
 A small brain for edge devices answers 300 problems from a handful of examples each. It joins AM, a reasoner that
 finds exact rules and proves them before giving them, with a small neural net that is AM's light: it shows AM where to
 search, and when there is no rule, it estimates, after checking itself first. It scores **274 of 300**, holds that
-score on 1,500 problems nobody had seen, and needs only **about 8 KB of memory**. A cut-down edition answered its 9
-test problems on a real 8-bit **Arduino Uno**, exactly as the computer did. It is supplied here **compiled**, so that
+score on 1,500 problems nobody had seen, and needs only **about 8 KB of memory**. Version 1.1 answered all 300 on a
+real **Raspberry Pi Pico**, a microcontroller with no floating-point unit, and every one of the 300 lines was the same
+as the computer's. A cut-down edition answered its 9 test problems on a real 8-bit **Arduino Uno**, exactly as the
+computer did. It is supplied here **compiled**, so that
 **anyone can replicate the result** on their own device, and anyone can try to beat it.
 
 **Current version: 1.2** (23 November 2026).
@@ -110,7 +112,7 @@ this repository's history.
 | Raspberry Pi Pico 2, simulated in Wokwi | `runners/wokwi`, quick set of 9 | 1.0 | **9 of 9** | 3 · 3 · 3 | 96 s (simulated) |
 | Arm Cortex-M4F, M7, M33 and M0, emulated in QEMU | `results/qemu`, all 300 on each | 1.0 | **275** on all four | 97 · 119 · 59 | 6 to 30 min (emulator) |
 | **Arduino Uno, a real board** (ATmega328P: 8-bit, 2 KB of RAM) | `runners/uno`, the Uno edition, quick set of 9 | 1.0 | **9 of 9**, every line the same | 3 · 3 · 3 | 92 min |
-| **Raspberry Pi Pico, a real board** (RP2040, no floating-point unit) | `runners/pico`, all 300 | 1.1 | running when 1.2 was published: its first 104 answers were all the same as 1.1's reference (`results/expected-1.1.txt`) | | about 4 h |
+| **Raspberry Pi Pico, a real board** (RP2040: Cortex-M0+ at 125 MHz, no floating-point unit) | `runners/pico`, all 300 | 1.1 | **274**, all 300 lines the same | 96 · 119 · 59 | 3 h 27 min |
 | Raspberry Pi Pico 2, a real board | `runners/pico` | 1.2 | waiting for a board | | |
 
 On the Mac, version 1.2 gives, problem by problem, the very same line as the reference in
@@ -123,7 +125,19 @@ self-check, right or wrong. The rows marked 1.0 and 1.1 were run with those vers
   gave 275, and all 1,200 lines are byte-for-byte the same as 1.0's reference, `results/expected-1.0.txt` (logs in
   `results/qemu`). An emulator runs a chip's instructions but not its real timing or power.
 
-**On a real chip:** a partner ran the Uno edition (`runners/uno`) on a real Arduino Uno. All 9 answers were right and
+**On real chips:** the original Raspberry Pi Pico (RP2040: one Cortex-M0+ core at 125 MHz for the brain, no
+floating-point unit) ran version 1.1's program for it (`edai-original-pico.uf2` from commit e75b0a3) on all 300
+problems. It scored 274 (96 · 119 · 59), and all 300 lines are the same as 1.1's reference, `results/expected-1.1.txt`:
+who answered (AM 77, AM's splitter 29, the net 128, CANNOT 66), both answers, the self-check, right or wrong. The
+brain's stack, measured on the chip, peaked at 2,888 bytes, within its stated bound of 2,984. With no floating-point
+unit, every number the net computes is worked out in software, so the run took 3 h 27 min: a median of 2.9 s for AM's
+exact rules, 14.6 s for its splitter, 69.7 s for the net's estimates and 58.6 s for CANNOT. The log and the check made
+at the time, with the SHA-256 of the program and of the reference, are in `results/pico`. To check the log again:
+`python3 runners/wokwi/check_log.py results/pico/real-pico-run.txt results/expected-1.1.txt`. A first try went silent
+after its 30th answer (all 30 the same as the reference); a diagnostic build then solved the next problems normally,
+and the full run above never stopped.
+
+A partner ran the Uno edition (`runners/uno`) on a real Arduino Uno. All 9 answers were right and
 the same as the reference, line for line, and the program's memory peaked at 1,901 of the chip's 2,048 bytes
 (`results/uno/real-uno-run.txt`). The Uno edition is the same design cut down to fit: AM and its splitter unchanged,
 a net of 8 units instead of 72, and x → y problems only. It stays at version 1.0: AM's proof alone takes 2,274 bytes
@@ -132,7 +146,9 @@ of the chip's flash, and the Uno edition has 320 left. Its README says exactly w
 Who answered the 300: AM 77 (exact rules, proven), AM's splitter 29 (exact rules in pieces), AM's estimate with
 doubted examples set aside 1, the net 128 (estimates that passed its self-check), and CANNOT 65.
 
-The brain does each step of its maths the same way on every target, so every device should give the same 300 lines.
+The brain does each step of its maths the same way on every target, so every device should give its version's
+reference lines, and every device whose lines were recorded did: the emulated cores, the simulated Pico 2, the real
+Uno and the real Pico.
 Running it on yours is the test.
 
 ## Fresh problems
@@ -215,13 +231,15 @@ It needs so little because:
 4. **No heap, and no globals.** The library never allocates memory and has no global or static data of its own: all
    state is in the object you own.
 5. **The stack is bounded and measured:** the deepest any call goes is worked out from the compiler's frame sizes. It is
-   at most 3,072 bytes on any target, and 2,968 bytes on the Pico 2's Cortex-M33.
+   at most 3,072 bytes on any target, and 2,968 bytes on the Pico 2's Cortex-M33. On the real Pico, version 1.1 used
+   2,888 bytes of stack, measured on the chip, against its bound of 2,984.
 6. **Its maths is its own.** `exp`, `tanh` and square roots are computed by the library's own code, with no tables and no
    maths library. That is also why every chip gives the same answers.
 
 The trade is time. Because it learns on every question, it spends time where other solvers spend memory: about 20 ms
 per problem on a Mac and 69 ms per sensor question on an iPhone. On the simulated 150 MHz Pico 2 an exact rule takes
-about 45 ms, and a problem the net must learn takes about 15 s.
+about 45 ms, and a problem the net must learn takes about 15 s. On the real original Pico (125 MHz, no floating-point
+unit, version 1.1), AM's exact rules took a median of 2.9 s and the net's estimates 70 s.
 
 ## Replicate it
 
@@ -301,7 +319,7 @@ python3 score.py your-answers-23.txt --key problems/fresh/seed-23/answers.json
 | `tests/exactness/` | the issue's kinds of test, through the public library: no exact answer may contradict its examples |
 | `tests/light/` | what the net's light and doubts add: falling and steep lines, lines with wrong examples, noise |
 | `tests/probes/` | the issue author's probes: their generators, scripts and results for 1.1 and 1.2 |
-| `results/` | the results above: `results.json`, the simulated Pico 2's log, the emulated cores' logs and test program (`results/qemu`), the real Uno's log (`results/uno`), and the references of versions 1.0 and 1.1 (`expected-1.0.txt`, `expected-1.1.txt`) |
+| `results/` | the results above: `results.json`, the simulated Pico 2's log, the emulated cores' logs and test program (`results/qemu`), the real Uno's log (`results/uno`), the real Pico's log and the check made at the time (`results/pico`), and the references of versions 1.0 and 1.1 (`expected-1.0.txt`, `expected-1.1.txt`) |
 
 ## About the brain
 
