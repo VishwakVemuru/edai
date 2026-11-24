@@ -41,6 +41,6 @@ for v in $VERSIONS; do
     else cp $d/answers.txt results/$v/$s.txt; same="stored as results/$v/$s.txt"; fi
     printf "%-8s %s  (%ss; %s)\n" "$s" "$score" "$secs" "$same"
   done
-  echo "   all six sets: $total of 1800; held-out sets (seed-25, 26, 27): $heldout of 900 (edai: 826)"
+  echo "   all six sets: $total of 1800; held-out sets (seed-25, 26, 27): $heldout of 900 (edai 1.2: 826; all six sets 1,649)"
 done
 [ $mismatch = 0 ] && echo "every answer matches the stored results" || { echo "some answers differ from the stored results"; exit 1; }
