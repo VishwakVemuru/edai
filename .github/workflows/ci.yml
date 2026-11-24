@@ -7,6 +7,8 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 1"        # weekly: also runs the slow Cortex-M0 job
 
 permissions:
   contents: read
@@ -133,10 +135,6 @@ jobs:
             flags: -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard
             ld: an505.ld
             board: mps2-an505
-          - core: cortex-m0plus
-            flags: -mcpu=cortex-m0
-            ld: microbit.ld
-            board: microbit
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -155,6 +153,47 @@ jobs:
       - name: Run the main 300 in QEMU, every line the same as the reference
         run: |
           timeout 80m qemu-system-arm -M ${{ matrix.board }} -nographic -monitor none -serial none \
+            -semihosting-config enable=on,target=native -kernel test.elf > chip.log 2>&1
+          python3 runners/wokwi/check_log.py chip.log runners/computer/expected.txt | tee check.txt
+          grep -q '^problems the chip answered: 300$' check.txt
+          grep -q 'the same line as the reference .*: 300 of 300$' check.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qemu-${{ matrix.core }}-log
+          path: chip.log
+
+  cortex-m0:
+    name: Emulated ${{ matrix.core }} (QEMU, weekly or on request)
+    # The M0 has no FPU, so QEMU emulates all its floating point in software: the 300 take well over 90 minutes.
+    # It runs weekly and on request (workflow_dispatch), not on every push.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - core: cortex-m0plus
+            flags: -mcpu=cortex-m0
+            ld: microbit.ld
+            board: microbit
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install the GNU Arm toolchain and QEMU
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q gcc-arm-none-eabi libnewlib-arm-none-eabi qemu-system-arm
+      - name: Build the test program with the ${{ matrix.core }} library
+        run: |
+          arm-none-eabi-gcc ${{ matrix.flags }} -mthumb -Os -ffreestanding -nostartfiles \
+            -Wl,--gc-sections -Wl,--no-enum-size-warning -Ibrain/include -Irunners/computer \
+            -T results/qemu/src/${{ matrix.ld }} \
+            results/qemu/src/main_qemu.c runners/computer/harness.c results/qemu/src/startup_cortex_m.c \
+            brain/lib/${{ matrix.core }}/libaa.a -lc -lgcc -o test.elf
+      - name: Run the main 300 in QEMU, every line the same as the reference
+        run: |
+          timeout 330m qemu-system-arm -M ${{ matrix.board }} -nographic -monitor none -serial none \
             -semihosting-config enable=on,target=native -kernel test.elf > chip.log 2>&1
           python3 runners/wokwi/check_log.py chip.log runners/computer/expected.txt | tee check.txt
           grep -q '^problems the chip answered: 300$' check.txt
